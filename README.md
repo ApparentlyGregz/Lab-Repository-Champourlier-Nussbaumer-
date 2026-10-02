@@ -6,3 +6,6 @@ Lab2: introduction-and-rdds ; Grégoire Champourlier ; github : ApparentlyGregz
 
 Lab3: sparksql-and-dataframes ; Hippolyte Nussbaumer ; github : hippolyte-coder
 Lab3: sparksql-and-dataframes ; Grégoire Champourlier ; github : ApparentlyGregz
+
+Lab4: Kafka overview ; Hippolyte Nussbaumer ; github : hippolyte-coder
+Lab4: Kafka overview ; Grégoire Champourlier ; github : ApparentlyGregz
