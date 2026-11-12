@@ -1,0 +1,2032 @@
+{
+  "definitions": {
+    "feature_minimum_minutes": 60,
+    "runtime_outlier_standard_deviations": 2,
+    "popularity_metric": "sum_of_IMDb_numVotes",
+    "popularity_years": [
+      1980,
+      2025
+    ]
+  },
+  "runtime_outlier_count": 12600,
+  "runtime_outlier_examples": [
+    {
+      "genre": "Documentary",
+      "tconst": "tt8273150",
+      "primaryTitle": "Logistics",
+      "year": 2012,
+      "runtime_minutes": 51420,
+      "genre_movies": 82215,
+      "genre_average_minutes": 88.7465182752539,
+      "genre_stddev_minutes": 264.8490049210321,
+      "z_score": 193.81327672735554
+    },
+    {
+      "genre": "Comedy",
+      "tconst": "tt5136218",
+      "primaryTitle": "London EC1",
+      "year": 2015,
+      "runtime_minutes": 5460,
+      "genre_movies": 92093,
+      "genre_average_minutes": 95.1926530789528,
+      "genre_stddev_minutes": 27.80011245824388,
+      "z_score": 192.97790089802896
+    },
+    {
+      "genre": "Documentary",
+      "tconst": "tt3854496",
+      "primaryTitle": "Ambiancé",
+      "year": 2020,
+      "runtime_minutes": 43200,
+      "genre_movies": 82215,
+      "genre_average_minutes": 88.7465182752539,
+      "genre_stddev_minutes": 264.8490049210321,
+      "z_score": 162.7767244003008
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt5068890",
+      "primaryTitle": "Hunger!",
+      "year": 2015,
+      "runtime_minutes": 6000,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 162.19241943935182
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt1806963",
+      "primaryTitle": "Matrjoschka",
+      "year": 2006,
+      "runtime_minutes": 5700,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 153.94673375072966
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt5136218",
+      "primaryTitle": "London EC1",
+      "year": 2015,
+      "runtime_minutes": 5460,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 147.35018519983194
+    },
+    {
+      "genre": "Documentary",
+      "tconst": "tt12277054",
+      "primaryTitle": "Carnets Filmés (Liste Complète)",
+      "year": 2019,
+      "runtime_minutes": 28643,
+      "genre_movies": 82215,
+      "genre_average_minutes": 88.7465182752539,
+      "genre_stddev_minutes": 264.8490049210321,
+      "z_score": 107.81333118558834
+    },
+    {
+      "genre": "Mystery",
+      "tconst": "tt5136218",
+      "primaryTitle": "London EC1",
+      "year": 2015,
+      "runtime_minutes": 5460,
+      "genre_movies": 15628,
+      "genre_average_minutes": 96.67539032505759,
+      "genre_stddev_minutes": 50.68498308735621,
+      "z_score": 105.8168373151311
+    },
+    {
+      "genre": "Music",
+      "tconst": "tt0284020",
+      "primaryTitle": "The Cure for Insomnia",
+      "year": 1987,
+      "runtime_minutes": 5220,
+      "genre_movies": 11899,
+      "genre_average_minutes": 94.64702916211446,
+      "genre_stddev_minutes": 60.3416983373735,
+      "z_score": 84.93882525781387
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt3837350",
+      "primaryTitle": "A 2nd generation film",
+      "year": 2013,
+      "runtime_minutes": 3077,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 81.85195521320983
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt0342707",
+      "primaryTitle": "The Longest Most Meaningless Movie in the World",
+      "year": 1970,
+      "runtime_minutes": 2880,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 76.43728827768128
+    },
+    {
+      "genre": "Family",
+      "tconst": "tt1866307",
+      "primaryTitle": "World Peace & Prayer Day",
+      "year": 2011,
+      "runtime_minutes": 2400,
+      "genre_movies": 14713,
+      "genre_average_minutes": 95.72996669611908,
+      "genre_stddev_minutes": 31.73173310309094,
+      "z_score": 72.61721336863967
+    },
+    {
+      "genre": "Horror",
+      "tconst": "tt7521772",
+      "primaryTitle": "24 Hour Psycho",
+      "year": 1993,
+      "runtime_minutes": 1440,
+      "genre_movies": 29054,
+      "genre_average_minutes": 90.76729538101466,
+      "genre_stddev_minutes": 20.92842460784105,
+      "z_score": 64.4689091463426
+    },
+    {
+      "genre": "Action",
+      "tconst": "tt7321476",
+      "primaryTitle": "h36:",
+      "year": 2017,
+      "runtime_minutes": 2160,
+      "genre_movies": 38752,
+      "genre_average_minutes": 103.27350846407927,
+      "genre_stddev_minutes": 32.83554083053461,
+      "z_score": 62.63720467254548
+    },
+    {
+      "genre": "Comedy",
+      "tconst": "tt1885195",
+      "primaryTitle": "Azgrab: The Documentary",
+      "year": 2011,
+      "runtime_minutes": 1669,
+      "genre_movies": 92093,
+      "genre_average_minutes": 95.1926530789528,
+      "genre_stddev_minutes": 27.80011245824388,
+      "z_score": 56.61154606064726
+    },
+    {
+      "genre": "Documentary",
+      "tconst": "tt2659636",
+      "primaryTitle": "Modern Times Forever",
+      "year": 2011,
+      "runtime_minutes": 14400,
+      "genre_movies": 82215,
+      "genre_average_minutes": 88.7465182752539,
+      "genre_stddev_minutes": 264.8490049210321,
+      "z_score": 54.03551916682421
+    },
+    {
+      "genre": "History",
+      "tconst": "tt5135246",
+      "primaryTitle": "Saynatakuna: Masks",
+      "year": 2013,
+      "runtime_minutes": 2905,
+      "genre_movies": 11690,
+      "genre_average_minutes": 101.28494439692045,
+      "genre_stddev_minutes": 53.96485395098903,
+      "z_score": 51.954463884020115
+    },
+    {
+      "genre": "History",
+      "tconst": "tt0342707",
+      "primaryTitle": "The Longest Most Meaningless Movie in the World",
+      "year": 1970,
+      "runtime_minutes": 2880,
+      "genre_movies": 11690,
+      "genre_average_minutes": 101.28494439692045,
+      "genre_stddev_minutes": 53.96485395098903,
+      "z_score": 51.49119940409203
+    },
+    {
+      "genre": "Drama",
+      "tconst": "tt0387271",
+      "primaryTitle": "A Twist of Fate",
+      "year": 1970,
+      "runtime_minutes": 1970,
+      "genre_movies": 184409,
+      "genre_average_minutes": 99.00793345227186,
+      "genre_stddev_minutes": 36.3826625618238,
+      "z_score": 51.425375022194046
+    },
+    {
+      "genre": "Fantasy",
+      "tconst": "tt0165127",
+      "primaryTitle": "Burning of the Red Lotus Temple",
+      "year": 1928,
+      "runtime_minutes": 1620,
+      "genre_movies": 11968,
+      "genre_average_minutes": 96.63619652406418,
+      "genre_stddev_minutes": 30.91046291931761,
+      "z_score": 49.28311191754763
+    }
+  ],
+  "top_three_genres_by_year": [
+    {
+      "year": 1980,
+      "genre": "Drama",
+      "total_votes": 3163679,
+      "movie_count": 1063,
+      "rank": 1
+    },
+    {
+      "year": 1980,
+      "genre": "Adventure",
+      "total_votes": 2482309,
+      "movie_count": 135,
+      "rank": 2
+    },
+    {
+      "year": 1980,
+      "genre": "Horror",
+      "total_votes": 2073720,
+      "movie_count": 142,
+      "rank": 3
+    },
+    {
+      "year": 1981,
+      "genre": "Adventure",
+      "total_votes": 2246531,
+      "movie_count": 152,
+      "rank": 1
+    },
+    {
+      "year": 1981,
+      "genre": "Drama",
+      "total_votes": 1709083,
+      "movie_count": 1020,
+      "rank": 2
+    },
+    {
+      "year": 1981,
+      "genre": "Horror",
+      "total_votes": 1276383,
+      "movie_count": 158,
+      "rank": 3
+    },
+    {
+      "year": 1982,
+      "genre": "Drama",
+      "total_votes": 3072485,
+      "movie_count": 1108,
+      "rank": 1
+    },
+    {
+      "year": 1982,
+      "genre": "Sci-Fi",
+      "total_votes": 2458546,
+      "movie_count": 51,
+      "rank": 2
+    },
+    {
+      "year": 1982,
+      "genre": "Action",
+      "total_votes": 1873716,
+      "movie_count": 294,
+      "rank": 3
+    },
+    {
+      "year": 1983,
+      "genre": "Drama",
+      "total_votes": 2920636,
+      "movie_count": 1133,
+      "rank": 1
+    },
+    {
+      "year": 1983,
+      "genre": "Action",
+      "total_votes": 2024898,
+      "movie_count": 297,
+      "rank": 2
+    },
+    {
+      "year": 1983,
+      "genre": "Adventure",
+      "total_votes": 1984742,
+      "movie_count": 158,
+      "rank": 3
+    },
+    {
+      "year": 1984,
+      "genre": "Action",
+      "total_votes": 3668601,
+      "movie_count": 288,
+      "rank": 1
+    },
+    {
+      "year": 1984,
+      "genre": "Drama",
+      "total_votes": 3023903,
+      "movie_count": 1113,
+      "rank": 2
+    },
+    {
+      "year": 1984,
+      "genre": "Adventure",
+      "total_votes": 2930445,
+      "movie_count": 143,
+      "rank": 3
+    },
+    {
+      "year": 1985,
+      "genre": "Comedy",
+      "total_votes": 4563769,
+      "movie_count": 621,
+      "rank": 1
+    },
+    {
+      "year": 1985,
+      "genre": "Adventure",
+      "total_votes": 3411758,
+      "movie_count": 148,
+      "rank": 2
+    },
+    {
+      "year": 1985,
+      "genre": "Drama",
+      "total_votes": 3077974,
+      "movie_count": 1071,
+      "rank": 3
+    },
+    {
+      "year": 1986,
+      "genre": "Drama",
+      "total_votes": 3999027,
+      "movie_count": 1126,
+      "rank": 1
+    },
+    {
+      "year": 1986,
+      "genre": "Adventure",
+      "total_votes": 2961628,
+      "movie_count": 160,
+      "rank": 2
+    },
+    {
+      "year": 1986,
+      "genre": "Comedy",
+      "total_votes": 2786011,
+      "movie_count": 627,
+      "rank": 3
+    },
+    {
+      "year": 1987,
+      "genre": "Drama",
+      "total_votes": 4134922,
+      "movie_count": 1227,
+      "rank": 1
+    },
+    {
+      "year": 1987,
+      "genre": "Comedy",
+      "total_votes": 3685730,
+      "movie_count": 623,
+      "rank": 2
+    },
+    {
+      "year": 1987,
+      "genre": "Action",
+      "total_votes": 2356033,
+      "movie_count": 419,
+      "rank": 3
+    },
+    {
+      "year": 1988,
+      "genre": "Drama",
+      "total_votes": 4465188,
+      "movie_count": 1150,
+      "rank": 1
+    },
+    {
+      "year": 1988,
+      "genre": "Comedy",
+      "total_votes": 4429867,
+      "movie_count": 618,
+      "rank": 2
+    },
+    {
+      "year": 1988,
+      "genre": "Action",
+      "total_votes": 2709127,
+      "movie_count": 442,
+      "rank": 3
+    },
+    {
+      "year": 1989,
+      "genre": "Comedy",
+      "total_votes": 5012838,
+      "movie_count": 662,
+      "rank": 1
+    },
+    {
+      "year": 1989,
+      "genre": "Drama",
+      "total_votes": 3960386,
+      "movie_count": 1193,
+      "rank": 2
+    },
+    {
+      "year": 1989,
+      "genre": "Adventure",
+      "total_votes": 2944137,
+      "movie_count": 167,
+      "rank": 3
+    },
+    {
+      "year": 1990,
+      "genre": "Drama",
+      "total_votes": 6320268,
+      "movie_count": 1158,
+      "rank": 1
+    },
+    {
+      "year": 1990,
+      "genre": "Comedy",
+      "total_votes": 4016403,
+      "movie_count": 621,
+      "rank": 2
+    },
+    {
+      "year": 1990,
+      "genre": "Crime",
+      "total_votes": 3589573,
+      "movie_count": 355,
+      "rank": 3
+    },
+    {
+      "year": 1991,
+      "genre": "Drama",
+      "total_votes": 5584693,
+      "movie_count": 1178,
+      "rank": 1
+    },
+    {
+      "year": 1991,
+      "genre": "Crime",
+      "total_votes": 3675404,
+      "movie_count": 264,
+      "rank": 2
+    },
+    {
+      "year": 1991,
+      "genre": "Comedy",
+      "total_votes": 3194791,
+      "movie_count": 622,
+      "rank": 3
+    },
+    {
+      "year": 1992,
+      "genre": "Drama",
+      "total_votes": 6089879,
+      "movie_count": 1063,
+      "rank": 1
+    },
+    {
+      "year": 1992,
+      "genre": "Comedy",
+      "total_votes": 4071316,
+      "movie_count": 615,
+      "rank": 2
+    },
+    {
+      "year": 1992,
+      "genre": "Crime",
+      "total_votes": 3610689,
+      "movie_count": 282,
+      "rank": 3
+    },
+    {
+      "year": 1993,
+      "genre": "Drama",
+      "total_votes": 8996064,
+      "movie_count": 1076,
+      "rank": 1
+    },
+    {
+      "year": 1993,
+      "genre": "Comedy",
+      "total_votes": 4499067,
+      "movie_count": 557,
+      "rank": 2
+    },
+    {
+      "year": 1993,
+      "genre": "Crime",
+      "total_votes": 3046678,
+      "movie_count": 288,
+      "rank": 3
+    },
+    {
+      "year": 1994,
+      "genre": "Drama",
+      "total_votes": 15742157,
+      "movie_count": 1123,
+      "rank": 1
+    },
+    {
+      "year": 1994,
+      "genre": "Crime",
+      "total_votes": 6505914,
+      "movie_count": 272,
+      "rank": 2
+    },
+    {
+      "year": 1994,
+      "genre": "Comedy",
+      "total_votes": 5676321,
+      "movie_count": 628,
+      "rank": 3
+    },
+    {
+      "year": 1995,
+      "genre": "Drama",
+      "total_votes": 12525648,
+      "movie_count": 1165,
+      "rank": 1
+    },
+    {
+      "year": 1995,
+      "genre": "Crime",
+      "total_votes": 7766999,
+      "movie_count": 255,
+      "rank": 2
+    },
+    {
+      "year": 1995,
+      "genre": "Comedy",
+      "total_votes": 6082408,
+      "movie_count": 585,
+      "rank": 3
+    },
+    {
+      "year": 1996,
+      "genre": "Drama",
+      "total_votes": 7861437,
+      "movie_count": 1135,
+      "rank": 1
+    },
+    {
+      "year": 1996,
+      "genre": "Comedy",
+      "total_votes": 4790270,
+      "movie_count": 660,
+      "rank": 2
+    },
+    {
+      "year": 1996,
+      "genre": "Crime",
+      "total_votes": 4445628,
+      "movie_count": 245,
+      "rank": 3
+    },
+    {
+      "year": 1997,
+      "genre": "Drama",
+      "total_votes": 12628128,
+      "movie_count": 1224,
+      "rank": 1
+    },
+    {
+      "year": 1997,
+      "genre": "Action",
+      "total_votes": 6768763,
+      "movie_count": 336,
+      "rank": 2
+    },
+    {
+      "year": 1997,
+      "genre": "Comedy",
+      "total_votes": 5606135,
+      "movie_count": 720,
+      "rank": 3
+    },
+    {
+      "year": 1998,
+      "genre": "Drama",
+      "total_votes": 11783906,
+      "movie_count": 1255,
+      "rank": 1
+    },
+    {
+      "year": 1998,
+      "genre": "Comedy",
+      "total_votes": 9864503,
+      "movie_count": 752,
+      "rank": 2
+    },
+    {
+      "year": 1998,
+      "genre": "Crime",
+      "total_votes": 6219924,
+      "movie_count": 304,
+      "rank": 3
+    },
+    {
+      "year": 1999,
+      "genre": "Drama",
+      "total_votes": 15522763,
+      "movie_count": 1371,
+      "rank": 1
+    },
+    {
+      "year": 1999,
+      "genre": "Comedy",
+      "total_votes": 8223637,
+      "movie_count": 810,
+      "rank": 2
+    },
+    {
+      "year": 1999,
+      "genre": "Crime",
+      "total_votes": 7183671,
+      "movie_count": 296,
+      "rank": 3
+    },
+    {
+      "year": 2000,
+      "genre": "Drama",
+      "total_votes": 13025719,
+      "movie_count": 1461,
+      "rank": 1
+    },
+    {
+      "year": 2000,
+      "genre": "Comedy",
+      "total_votes": 8336499,
+      "movie_count": 806,
+      "rank": 2
+    },
+    {
+      "year": 2000,
+      "genre": "Adventure",
+      "total_votes": 6982715,
+      "movie_count": 141,
+      "rank": 3
+    },
+    {
+      "year": 2001,
+      "genre": "Drama",
+      "total_votes": 14737243,
+      "movie_count": 1594,
+      "rank": 1
+    },
+    {
+      "year": 2001,
+      "genre": "Comedy",
+      "total_votes": 9509527,
+      "movie_count": 887,
+      "rank": 2
+    },
+    {
+      "year": 2001,
+      "genre": "Adventure",
+      "total_votes": 9250155,
+      "movie_count": 150,
+      "rank": 3
+    },
+    {
+      "year": 2002,
+      "genre": "Drama",
+      "total_votes": 17062340,
+      "movie_count": 1636,
+      "rank": 1
+    },
+    {
+      "year": 2002,
+      "genre": "Adventure",
+      "total_votes": 8690535,
+      "movie_count": 149,
+      "rank": 2
+    },
+    {
+      "year": 2002,
+      "genre": "Action",
+      "total_votes": 8393183,
+      "movie_count": 396,
+      "rank": 3
+    },
+    {
+      "year": 2003,
+      "genre": "Drama",
+      "total_votes": 13254158,
+      "movie_count": 1675,
+      "rank": 1
+    },
+    {
+      "year": 2003,
+      "genre": "Action",
+      "total_votes": 11710912,
+      "movie_count": 368,
+      "rank": 2
+    },
+    {
+      "year": 2003,
+      "genre": "Comedy",
+      "total_votes": 10760966,
+      "movie_count": 1024,
+      "rank": 3
+    },
+    {
+      "year": 2004,
+      "genre": "Drama",
+      "total_votes": 16476460,
+      "movie_count": 1776,
+      "rank": 1
+    },
+    {
+      "year": 2004,
+      "genre": "Action",
+      "total_votes": 11516160,
+      "movie_count": 412,
+      "rank": 2
+    },
+    {
+      "year": 2004,
+      "genre": "Comedy",
+      "total_votes": 10949509,
+      "movie_count": 1034,
+      "rank": 3
+    },
+    {
+      "year": 2005,
+      "genre": "Drama",
+      "total_votes": 13688646,
+      "movie_count": 1926,
+      "rank": 1
+    },
+    {
+      "year": 2005,
+      "genre": "Comedy",
+      "total_votes": 10193732,
+      "movie_count": 1138,
+      "rank": 2
+    },
+    {
+      "year": 2005,
+      "genre": "Action",
+      "total_votes": 9061417,
+      "movie_count": 390,
+      "rank": 3
+    },
+    {
+      "year": 2006,
+      "genre": "Drama",
+      "total_votes": 20885807,
+      "movie_count": 2187,
+      "rank": 1
+    },
+    {
+      "year": 2006,
+      "genre": "Comedy",
+      "total_votes": 11776960,
+      "movie_count": 1248,
+      "rank": 2
+    },
+    {
+      "year": 2006,
+      "genre": "Thriller",
+      "total_votes": 8666781,
+      "movie_count": 421,
+      "rank": 3
+    },
+    {
+      "year": 2007,
+      "genre": "Drama",
+      "total_votes": 18536783,
+      "movie_count": 2218,
+      "rank": 1
+    },
+    {
+      "year": 2007,
+      "genre": "Comedy",
+      "total_votes": 11718538,
+      "movie_count": 1235,
+      "rank": 2
+    },
+    {
+      "year": 2007,
+      "genre": "Action",
+      "total_votes": 8992322,
+      "movie_count": 432,
+      "rank": 3
+    },
+    {
+      "year": 2008,
+      "genre": "Drama",
+      "total_votes": 17574210,
+      "movie_count": 2482,
+      "rank": 1
+    },
+    {
+      "year": 2008,
+      "genre": "Action",
+      "total_votes": 13404387,
+      "movie_count": 499,
+      "rank": 2
+    },
+    {
+      "year": 2008,
+      "genre": "Comedy",
+      "total_votes": 11327815,
+      "movie_count": 1405,
+      "rank": 3
+    },
+    {
+      "year": 2009,
+      "genre": "Drama",
+      "total_votes": 17590672,
+      "movie_count": 2773,
+      "rank": 1
+    },
+    {
+      "year": 2009,
+      "genre": "Comedy",
+      "total_votes": 13462651,
+      "movie_count": 1548,
+      "rank": 2
+    },
+    {
+      "year": 2009,
+      "genre": "Action",
+      "total_votes": 12118563,
+      "movie_count": 595,
+      "rank": 3
+    },
+    {
+      "year": 2010,
+      "genre": "Drama",
+      "total_votes": 17552874,
+      "movie_count": 2931,
+      "rank": 1
+    },
+    {
+      "year": 2010,
+      "genre": "Action",
+      "total_votes": 13331176,
+      "movie_count": 673,
+      "rank": 2
+    },
+    {
+      "year": 2010,
+      "genre": "Adventure",
+      "total_votes": 13177855,
+      "movie_count": 336,
+      "rank": 3
+    },
+    {
+      "year": 2011,
+      "genre": "Drama",
+      "total_votes": 20717586,
+      "movie_count": 3156,
+      "rank": 1
+    },
+    {
+      "year": 2011,
+      "genre": "Action",
+      "total_votes": 17146468,
+      "movie_count": 700,
+      "rank": 2
+    },
+    {
+      "year": 2011,
+      "genre": "Comedy",
+      "total_votes": 13980622,
+      "movie_count": 1721,
+      "rank": 3
+    },
+    {
+      "year": 2012,
+      "genre": "Drama",
+      "total_votes": 20114768,
+      "movie_count": 3268,
+      "rank": 1
+    },
+    {
+      "year": 2012,
+      "genre": "Action",
+      "total_votes": 14895263,
+      "movie_count": 683,
+      "rank": 2
+    },
+    {
+      "year": 2012,
+      "genre": "Comedy",
+      "total_votes": 12509262,
+      "movie_count": 1829,
+      "rank": 3
+    },
+    {
+      "year": 2013,
+      "genre": "Drama",
+      "total_votes": 21915484,
+      "movie_count": 3614,
+      "rank": 1
+    },
+    {
+      "year": 2013,
+      "genre": "Action",
+      "total_votes": 17179453,
+      "movie_count": 776,
+      "rank": 2
+    },
+    {
+      "year": 2013,
+      "genre": "Comedy",
+      "total_votes": 14956716,
+      "movie_count": 1936,
+      "rank": 3
+    },
+    {
+      "year": 2014,
+      "genre": "Drama",
+      "total_votes": 24514158,
+      "movie_count": 3784,
+      "rank": 1
+    },
+    {
+      "year": 2014,
+      "genre": "Action",
+      "total_votes": 20930106,
+      "movie_count": 814,
+      "rank": 2
+    },
+    {
+      "year": 2014,
+      "genre": "Adventure",
+      "total_votes": 17738995,
+      "movie_count": 518,
+      "rank": 3
+    },
+    {
+      "year": 2015,
+      "genre": "Drama",
+      "total_votes": 20481990,
+      "movie_count": 3910,
+      "rank": 1
+    },
+    {
+      "year": 2015,
+      "genre": "Action",
+      "total_votes": 15559741,
+      "movie_count": 850,
+      "rank": 2
+    },
+    {
+      "year": 2015,
+      "genre": "Adventure",
+      "total_votes": 14162940,
+      "movie_count": 516,
+      "rank": 3
+    },
+    {
+      "year": 2016,
+      "genre": "Drama",
+      "total_votes": 20883557,
+      "movie_count": 3937,
+      "rank": 1
+    },
+    {
+      "year": 2016,
+      "genre": "Action",
+      "total_votes": 17207276,
+      "movie_count": 891,
+      "rank": 2
+    },
+    {
+      "year": 2016,
+      "genre": "Adventure",
+      "total_votes": 12363760,
+      "movie_count": 530,
+      "rank": 3
+    },
+    {
+      "year": 2017,
+      "genre": "Drama",
+      "total_votes": 20801742,
+      "movie_count": 4071,
+      "rank": 1
+    },
+    {
+      "year": 2017,
+      "genre": "Action",
+      "total_votes": 16707506,
+      "movie_count": 909,
+      "rank": 2
+    },
+    {
+      "year": 2017,
+      "genre": "Comedy",
+      "total_votes": 11301385,
+      "movie_count": 2130,
+      "rank": 3
+    },
+    {
+      "year": 2018,
+      "genre": "Drama",
+      "total_votes": 17404158,
+      "movie_count": 4186,
+      "rank": 1
+    },
+    {
+      "year": 2018,
+      "genre": "Action",
+      "total_votes": 15079270,
+      "movie_count": 891,
+      "rank": 2
+    },
+    {
+      "year": 2018,
+      "genre": "Adventure",
+      "total_votes": 13344499,
+      "movie_count": 509,
+      "rank": 3
+    },
+    {
+      "year": 2019,
+      "genre": "Drama",
+      "total_votes": 21998258,
+      "movie_count": 4249,
+      "rank": 1
+    },
+    {
+      "year": 2019,
+      "genre": "Action",
+      "total_votes": 12355053,
+      "movie_count": 901,
+      "rank": 2
+    },
+    {
+      "year": 2019,
+      "genre": "Comedy",
+      "total_votes": 12246407,
+      "movie_count": 2129,
+      "rank": 3
+    },
+    {
+      "year": 2020,
+      "genre": "Drama",
+      "total_votes": 10462065,
+      "movie_count": 3148,
+      "rank": 1
+    },
+    {
+      "year": 2020,
+      "genre": "Comedy",
+      "total_votes": 6507297,
+      "movie_count": 1546,
+      "rank": 2
+    },
+    {
+      "year": 2020,
+      "genre": "Action",
+      "total_votes": 6126941,
+      "movie_count": 606,
+      "rank": 3
+    },
+    {
+      "year": 2021,
+      "genre": "Drama",
+      "total_votes": 14383260,
+      "movie_count": 3588,
+      "rank": 1
+    },
+    {
+      "year": 2021,
+      "genre": "Action",
+      "total_votes": 12870759,
+      "movie_count": 826,
+      "rank": 2
+    },
+    {
+      "year": 2021,
+      "genre": "Adventure",
+      "total_votes": 10189309,
+      "movie_count": 401,
+      "rank": 3
+    },
+    {
+      "year": 2022,
+      "genre": "Drama",
+      "total_votes": 15957111,
+      "movie_count": 4102,
+      "rank": 1
+    },
+    {
+      "year": 2022,
+      "genre": "Action",
+      "total_votes": 13349185,
+      "movie_count": 924,
+      "rank": 2
+    },
+    {
+      "year": 2022,
+      "genre": "Comedy",
+      "total_votes": 10196049,
+      "movie_count": 2205,
+      "rank": 3
+    },
+    {
+      "year": 2023,
+      "genre": "Drama",
+      "total_votes": 14754249,
+      "movie_count": 4295,
+      "rank": 1
+    },
+    {
+      "year": 2023,
+      "genre": "Action",
+      "total_votes": 10567691,
+      "movie_count": 1043,
+      "rank": 2
+    },
+    {
+      "year": 2023,
+      "genre": "Comedy",
+      "total_votes": 9490302,
+      "movie_count": 2243,
+      "rank": 3
+    },
+    {
+      "year": 2024,
+      "genre": "Drama",
+      "total_votes": 11636055,
+      "movie_count": 3986,
+      "rank": 1
+    },
+    {
+      "year": 2024,
+      "genre": "Action",
+      "total_votes": 8648553,
+      "movie_count": 993,
+      "rank": 2
+    },
+    {
+      "year": 2024,
+      "genre": "Comedy",
+      "total_votes": 7081670,
+      "movie_count": 2090,
+      "rank": 3
+    },
+    {
+      "year": 2025,
+      "genre": "Drama",
+      "total_votes": 8614613,
+      "movie_count": 3556,
+      "rank": 1
+    },
+    {
+      "year": 2025,
+      "genre": "Action",
+      "total_votes": 7687716,
+      "movie_count": 941,
+      "rank": 2
+    },
+    {
+      "year": 2025,
+      "genre": "Comedy",
+      "total_votes": 5885146,
+      "movie_count": 1908,
+      "rank": 3
+    }
+  ],
+  "top_three_vs_others_by_year": [
+    {
+      "year": 1980,
+      "group": "other_genres",
+      "total_votes": 9716244,
+      "film_genre_count": 2257,
+      "genre_count": 21,
+      "vote_share_pct": 55.7253,
+      "film_genre_share_pct": 62.7467
+    },
+    {
+      "year": 1980,
+      "group": "top_three",
+      "total_votes": 7719708,
+      "film_genre_count": 1340,
+      "genre_count": 3,
+      "vote_share_pct": 44.2747,
+      "film_genre_share_pct": 37.2533
+    },
+    {
+      "year": 1981,
+      "group": "other_genres",
+      "total_votes": 6013380,
+      "film_genre_count": 2349,
+      "genre_count": 20,
+      "vote_share_pct": 53.4742,
+      "film_genre_share_pct": 63.8489
+    },
+    {
+      "year": 1981,
+      "group": "top_three",
+      "total_votes": 5231997,
+      "film_genre_count": 1330,
+      "genre_count": 3,
+      "vote_share_pct": 46.5258,
+      "film_genre_share_pct": 36.1511
+    },
+    {
+      "year": 1982,
+      "group": "other_genres",
+      "total_votes": 9529194,
+      "film_genre_count": 2267,
+      "genre_count": 19,
+      "vote_share_pct": 56.2727,
+      "film_genre_share_pct": 60.9409
+    },
+    {
+      "year": 1982,
+      "group": "top_three",
+      "total_votes": 7404747,
+      "film_genre_count": 1453,
+      "genre_count": 3,
+      "vote_share_pct": 43.7273,
+      "film_genre_share_pct": 39.0591
+    },
+    {
+      "year": 1983,
+      "group": "other_genres",
+      "total_votes": 8179179,
+      "film_genre_count": 2212,
+      "genre_count": 19,
+      "vote_share_pct": 54.1329,
+      "film_genre_share_pct": 58.2105
+    },
+    {
+      "year": 1983,
+      "group": "top_three",
+      "total_votes": 6930276,
+      "film_genre_count": 1588,
+      "genre_count": 3,
+      "vote_share_pct": 45.8671,
+      "film_genre_share_pct": 41.7895
+    },
+    {
+      "year": 1984,
+      "group": "other_genres",
+      "total_votes": 12160654,
+      "film_genre_count": 2292,
+      "genre_count": 19,
+      "vote_share_pct": 55.8248,
+      "film_genre_share_pct": 59.7497
+    },
+    {
+      "year": 1984,
+      "group": "top_three",
+      "total_votes": 9622949,
+      "film_genre_count": 1544,
+      "genre_count": 3,
+      "vote_share_pct": 44.1752,
+      "film_genre_share_pct": 40.2503
+    },
+    {
+      "year": 1985,
+      "group": "other_genres",
+      "total_votes": 10394687,
+      "film_genre_count": 2046,
+      "genre_count": 19,
+      "vote_share_pct": 48.4642,
+      "film_genre_share_pct": 52.6505
+    },
+    {
+      "year": 1985,
+      "group": "top_three",
+      "total_votes": 11053501,
+      "film_genre_count": 1840,
+      "genre_count": 3,
+      "vote_share_pct": 51.5358,
+      "film_genre_share_pct": 47.3495
+    },
+    {
+      "year": 1986,
+      "group": "other_genres",
+      "total_votes": 11327326,
+      "film_genre_count": 2088,
+      "genre_count": 19,
+      "vote_share_pct": 53.7503,
+      "film_genre_share_pct": 52.187
+    },
+    {
+      "year": 1986,
+      "group": "top_three",
+      "total_votes": 9746666,
+      "film_genre_count": 1913,
+      "genre_count": 3,
+      "vote_share_pct": 46.2497,
+      "film_genre_share_pct": 47.813
+    },
+    {
+      "year": 1987,
+      "group": "other_genres",
+      "total_votes": 13680127,
+      "film_genre_count": 1955,
+      "genre_count": 19,
+      "vote_share_pct": 57.3426,
+      "film_genre_share_pct": 46.2831
+    },
+    {
+      "year": 1987,
+      "group": "top_three",
+      "total_votes": 10176685,
+      "film_genre_count": 2269,
+      "genre_count": 3,
+      "vote_share_pct": 42.6574,
+      "film_genre_share_pct": 53.7169
+    },
+    {
+      "year": 1988,
+      "group": "other_genres",
+      "total_votes": 13165481,
+      "film_genre_count": 2043,
+      "genre_count": 19,
+      "vote_share_pct": 53.1516,
+      "film_genre_share_pct": 48.0367
+    },
+    {
+      "year": 1988,
+      "group": "top_three",
+      "total_votes": 11604182,
+      "film_genre_count": 2210,
+      "genre_count": 3,
+      "vote_share_pct": 46.8484,
+      "film_genre_share_pct": 51.9633
+    },
+    {
+      "year": 1989,
+      "group": "other_genres",
+      "total_votes": 12172741,
+      "film_genre_count": 2355,
+      "genre_count": 19,
+      "vote_share_pct": 50.5301,
+      "film_genre_share_pct": 53.804
+    },
+    {
+      "year": 1989,
+      "group": "top_three",
+      "total_votes": 11917361,
+      "film_genre_count": 2022,
+      "genre_count": 3,
+      "vote_share_pct": 49.4699,
+      "film_genre_share_pct": 46.196
+    },
+    {
+      "year": 1990,
+      "group": "other_genres",
+      "total_votes": 16602260,
+      "film_genre_count": 2051,
+      "genre_count": 19,
+      "vote_share_pct": 54.3828,
+      "film_genre_share_pct": 49.0084
+    },
+    {
+      "year": 1990,
+      "group": "top_three",
+      "total_votes": 13926244,
+      "film_genre_count": 2134,
+      "genre_count": 3,
+      "vote_share_pct": 45.6172,
+      "film_genre_share_pct": 50.9916
+    },
+    {
+      "year": 1991,
+      "group": "other_genres",
+      "total_votes": 15693839,
+      "film_genre_count": 1957,
+      "genre_count": 19,
+      "vote_share_pct": 55.7533,
+      "film_genre_share_pct": 48.6695
+    },
+    {
+      "year": 1991,
+      "group": "top_three",
+      "total_votes": 12454888,
+      "film_genre_count": 2064,
+      "genre_count": 3,
+      "vote_share_pct": 44.2467,
+      "film_genre_share_pct": 51.3305
+    },
+    {
+      "year": 1992,
+      "group": "other_genres",
+      "total_votes": 15903364,
+      "film_genre_count": 1850,
+      "genre_count": 19,
+      "vote_share_pct": 53.5913,
+      "film_genre_share_pct": 48.5564
+    },
+    {
+      "year": 1992,
+      "group": "top_three",
+      "total_votes": 13771884,
+      "film_genre_count": 1960,
+      "genre_count": 3,
+      "vote_share_pct": 46.4087,
+      "film_genre_share_pct": 51.4436
+    },
+    {
+      "year": 1993,
+      "group": "other_genres",
+      "total_votes": 20382177,
+      "film_genre_count": 1853,
+      "genre_count": 19,
+      "vote_share_pct": 55.2004,
+      "film_genre_share_pct": 49.0991
+    },
+    {
+      "year": 1993,
+      "group": "top_three",
+      "total_votes": 16541809,
+      "film_genre_count": 1921,
+      "genre_count": 3,
+      "vote_share_pct": 44.7996,
+      "film_genre_share_pct": 50.9009
+    },
+    {
+      "year": 1994,
+      "group": "other_genres",
+      "total_votes": 19960435,
+      "film_genre_count": 1866,
+      "genre_count": 19,
+      "vote_share_pct": 41.6843,
+      "film_genre_share_pct": 47.9815
+    },
+    {
+      "year": 1994,
+      "group": "top_three",
+      "total_votes": 27924392,
+      "film_genre_count": 2023,
+      "genre_count": 3,
+      "vote_share_pct": 58.3157,
+      "film_genre_share_pct": 52.0185
+    },
+    {
+      "year": 1995,
+      "group": "other_genres",
+      "total_votes": 27414105,
+      "film_genre_count": 2026,
+      "genre_count": 19,
+      "vote_share_pct": 50.9659,
+      "film_genre_share_pct": 50.2605
+    },
+    {
+      "year": 1995,
+      "group": "top_three",
+      "total_votes": 26375055,
+      "film_genre_count": 2005,
+      "genre_count": 3,
+      "vote_share_pct": 49.0341,
+      "film_genre_share_pct": 49.7395
+    },
+    {
+      "year": 1996,
+      "group": "other_genres",
+      "total_votes": 20977615,
+      "film_genre_count": 1971,
+      "genre_count": 20,
+      "vote_share_pct": 55.0956,
+      "film_genre_share_pct": 49.1399
+    },
+    {
+      "year": 1996,
+      "group": "top_three",
+      "total_votes": 17097335,
+      "film_genre_count": 2040,
+      "genre_count": 3,
+      "vote_share_pct": 44.9044,
+      "film_genre_share_pct": 50.8601
+    },
+    {
+      "year": 1997,
+      "group": "other_genres",
+      "total_votes": 31691347,
+      "film_genre_count": 1968,
+      "genre_count": 19,
+      "vote_share_pct": 55.8986,
+      "film_genre_share_pct": 46.3277
+    },
+    {
+      "year": 1997,
+      "group": "top_three",
+      "total_votes": 25003026,
+      "film_genre_count": 2280,
+      "genre_count": 3,
+      "vote_share_pct": 44.1014,
+      "film_genre_share_pct": 53.6723
+    },
+    {
+      "year": 1998,
+      "group": "other_genres",
+      "total_votes": 26256930,
+      "film_genre_count": 2098,
+      "genre_count": 19,
+      "vote_share_pct": 48.5114,
+      "film_genre_share_pct": 47.5845
+    },
+    {
+      "year": 1998,
+      "group": "top_three",
+      "total_votes": 27868333,
+      "film_genre_count": 2311,
+      "genre_count": 3,
+      "vote_share_pct": 51.4886,
+      "film_genre_share_pct": 52.4155
+    },
+    {
+      "year": 1999,
+      "group": "other_genres",
+      "total_votes": 39944628,
+      "film_genre_count": 2250,
+      "genre_count": 19,
+      "vote_share_pct": 56.3595,
+      "film_genre_share_pct": 47.5989
+    },
+    {
+      "year": 1999,
+      "group": "top_three",
+      "total_votes": 30930071,
+      "film_genre_count": 2477,
+      "genre_count": 3,
+      "vote_share_pct": 43.6405,
+      "film_genre_share_pct": 52.4011
+    },
+    {
+      "year": 2000,
+      "group": "other_genres",
+      "total_votes": 34622051,
+      "film_genre_count": 2678,
+      "genre_count": 19,
+      "vote_share_pct": 54.9845,
+      "film_genre_share_pct": 52.6543
+    },
+    {
+      "year": 2000,
+      "group": "top_three",
+      "total_votes": 28344933,
+      "film_genre_count": 2408,
+      "genre_count": 3,
+      "vote_share_pct": 45.0155,
+      "film_genre_share_pct": 47.3457
+    },
+    {
+      "year": 2001,
+      "group": "other_genres",
+      "total_votes": 45549906,
+      "film_genre_count": 2853,
+      "genre_count": 19,
+      "vote_share_pct": 57.6239,
+      "film_genre_share_pct": 52.0241
+    },
+    {
+      "year": 2001,
+      "group": "top_three",
+      "total_votes": 33496925,
+      "film_genre_count": 2631,
+      "genre_count": 3,
+      "vote_share_pct": 42.3761,
+      "film_genre_share_pct": 47.9759
+    },
+    {
+      "year": 2002,
+      "group": "other_genres",
+      "total_votes": 46363637,
+      "film_genre_count": 3415,
+      "genre_count": 22,
+      "vote_share_pct": 57.5876,
+      "film_genre_share_pct": 61.0257
+    },
+    {
+      "year": 2002,
+      "group": "top_three",
+      "total_votes": 34146058,
+      "film_genre_count": 2181,
+      "genre_count": 3,
+      "vote_share_pct": 42.4124,
+      "film_genre_share_pct": 38.9743
+    },
+    {
+      "year": 2003,
+      "group": "other_genres",
+      "total_votes": 42786949,
+      "film_genre_count": 2768,
+      "genre_count": 20,
+      "vote_share_pct": 54.4967,
+      "film_genre_share_pct": 47.4379
+    },
+    {
+      "year": 2003,
+      "group": "top_three",
+      "total_votes": 35726036,
+      "film_genre_count": 3067,
+      "genre_count": 3,
+      "vote_share_pct": 45.5033,
+      "film_genre_share_pct": 52.5621
+    },
+    {
+      "year": 2004,
+      "group": "other_genres",
+      "total_votes": 55281280,
+      "film_genre_count": 3131,
+      "genre_count": 21,
+      "vote_share_pct": 58.6704,
+      "film_genre_share_pct": 49.2838
+    },
+    {
+      "year": 2004,
+      "group": "top_three",
+      "total_votes": 38942129,
+      "film_genre_count": 3222,
+      "genre_count": 3,
+      "vote_share_pct": 41.3296,
+      "film_genre_share_pct": 50.7162
+    },
+    {
+      "year": 2005,
+      "group": "other_genres",
+      "total_votes": 48631455,
+      "film_genre_count": 3532,
+      "genre_count": 21,
+      "vote_share_pct": 59.6155,
+      "film_genre_share_pct": 50.5583
+    },
+    {
+      "year": 2005,
+      "group": "top_three",
+      "total_votes": 32943795,
+      "film_genre_count": 3454,
+      "genre_count": 3,
+      "vote_share_pct": 40.3845,
+      "film_genre_share_pct": 49.4417
+    },
+    {
+      "year": 2006,
+      "group": "other_genres",
+      "total_votes": 55455341,
+      "film_genre_count": 4079,
+      "genre_count": 20,
+      "vote_share_pct": 57.2975,
+      "film_genre_share_pct": 51.4052
+    },
+    {
+      "year": 2006,
+      "group": "top_three",
+      "total_votes": 41329548,
+      "film_genre_count": 3856,
+      "genre_count": 3,
+      "vote_share_pct": 42.7025,
+      "film_genre_share_pct": 48.5948
+    },
+    {
+      "year": 2007,
+      "group": "other_genres",
+      "total_votes": 63144224,
+      "film_genre_count": 4456,
+      "genre_count": 21,
+      "vote_share_pct": 61.6692,
+      "film_genre_share_pct": 53.4229
+    },
+    {
+      "year": 2007,
+      "group": "top_three",
+      "total_votes": 39247643,
+      "film_genre_count": 3885,
+      "genre_count": 3,
+      "vote_share_pct": 38.3308,
+      "film_genre_share_pct": 46.5771
+    },
+    {
+      "year": 2008,
+      "group": "other_genres",
+      "total_votes": 62403110,
+      "film_genre_count": 4982,
+      "genre_count": 20,
+      "vote_share_pct": 59.5964,
+      "film_genre_share_pct": 53.181
+    },
+    {
+      "year": 2008,
+      "group": "top_three",
+      "total_votes": 42306412,
+      "film_genre_count": 4386,
+      "genre_count": 3,
+      "vote_share_pct": 40.4036,
+      "film_genre_share_pct": 46.819
+    },
+    {
+      "year": 2009,
+      "group": "other_genres",
+      "total_votes": 61246719,
+      "film_genre_count": 5696,
+      "genre_count": 20,
+      "vote_share_pct": 58.655,
+      "film_genre_share_pct": 53.6751
+    },
+    {
+      "year": 2009,
+      "group": "top_three",
+      "total_votes": 43171886,
+      "film_genre_count": 4916,
+      "genre_count": 3,
+      "vote_share_pct": 41.345,
+      "film_genre_share_pct": 46.3249
+    },
+    {
+      "year": 2010,
+      "group": "other_genres",
+      "total_votes": 66142414,
+      "film_genre_count": 7697,
+      "genre_count": 21,
+      "vote_share_pct": 60.018,
+      "film_genre_share_pct": 66.1425
+    },
+    {
+      "year": 2010,
+      "group": "top_three",
+      "total_votes": 44061905,
+      "film_genre_count": 3940,
+      "genre_count": 3,
+      "vote_share_pct": 39.982,
+      "film_genre_share_pct": 33.8575
+    },
+    {
+      "year": 2011,
+      "group": "other_genres",
+      "total_votes": 60594558,
+      "film_genre_count": 7039,
+      "genre_count": 21,
+      "vote_share_pct": 53.8909,
+      "film_genre_share_pct": 55.7942
+    },
+    {
+      "year": 2011,
+      "group": "top_three",
+      "total_votes": 51844676,
+      "film_genre_count": 5577,
+      "genre_count": 3,
+      "vote_share_pct": 46.1091,
+      "film_genre_share_pct": 44.2058
+    },
+    {
+      "year": 2012,
+      "group": "other_genres",
+      "total_votes": 63628282,
+      "film_genre_count": 7583,
+      "genre_count": 21,
+      "vote_share_pct": 57.2467,
+      "film_genre_share_pct": 56.7462
+    },
+    {
+      "year": 2012,
+      "group": "top_three",
+      "total_votes": 47519293,
+      "film_genre_count": 5780,
+      "genre_count": 3,
+      "vote_share_pct": 42.7533,
+      "film_genre_share_pct": 43.2538
+    },
+    {
+      "year": 2013,
+      "group": "other_genres",
+      "total_votes": 76019349,
+      "film_genre_count": 8523,
+      "genre_count": 20,
+      "vote_share_pct": 58.4445,
+      "film_genre_share_pct": 57.3978
+    },
+    {
+      "year": 2013,
+      "group": "top_three",
+      "total_votes": 54051653,
+      "film_genre_count": 6326,
+      "genre_count": 3,
+      "vote_share_pct": 41.5555,
+      "film_genre_share_pct": 42.6022
+    },
+    {
+      "year": 2014,
+      "group": "other_genres",
+      "total_votes": 71041955,
+      "film_genre_count": 11029,
+      "genre_count": 23,
+      "vote_share_pct": 52.9274,
+      "film_genre_share_pct": 68.3122
+    },
+    {
+      "year": 2014,
+      "group": "top_three",
+      "total_votes": 63183259,
+      "film_genre_count": 5116,
+      "genre_count": 3,
+      "vote_share_pct": 47.0726,
+      "film_genre_share_pct": 31.6878
+    },
+    {
+      "year": 2015,
+      "group": "other_genres",
+      "total_votes": 57471954,
+      "film_genre_count": 10883,
+      "genre_count": 21,
+      "vote_share_pct": 53.3746,
+      "film_genre_share_pct": 67.3495
+    },
+    {
+      "year": 2015,
+      "group": "top_three",
+      "total_votes": 50204671,
+      "film_genre_count": 5276,
+      "genre_count": 3,
+      "vote_share_pct": 46.6254,
+      "film_genre_share_pct": 32.6505
+    },
+    {
+      "year": 2016,
+      "group": "other_genres",
+      "total_votes": 63961357,
+      "film_genre_count": 10941,
+      "genre_count": 21,
+      "vote_share_pct": 55.9025,
+      "film_genre_share_pct": 67.1268
+    },
+    {
+      "year": 2016,
+      "group": "top_three",
+      "total_votes": 50454593,
+      "film_genre_count": 5358,
+      "genre_count": 3,
+      "vote_share_pct": 44.0975,
+      "film_genre_share_pct": 32.8732
+    },
+    {
+      "year": 2017,
+      "group": "other_genres",
+      "total_votes": 59508233,
+      "film_genre_count": 9460,
+      "genre_count": 22,
+      "vote_share_pct": 54.938,
+      "film_genre_share_pct": 57.0911
+    },
+    {
+      "year": 2017,
+      "group": "top_three",
+      "total_votes": 48810633,
+      "film_genre_count": 7110,
+      "genre_count": 3,
+      "vote_share_pct": 45.062,
+      "film_genre_share_pct": 42.9089
+    },
+    {
+      "year": 2018,
+      "group": "other_genres",
+      "total_votes": 57606259,
+      "film_genre_count": 11175,
+      "genre_count": 22,
+      "vote_share_pct": 55.6936,
+      "film_genre_share_pct": 66.6726
+    },
+    {
+      "year": 2018,
+      "group": "top_three",
+      "total_votes": 45827927,
+      "film_genre_count": 5586,
+      "genre_count": 3,
+      "vote_share_pct": 44.3064,
+      "film_genre_share_pct": 33.3274
+    },
+    {
+      "year": 2019,
+      "group": "other_genres",
+      "total_votes": 60191534,
+      "film_genre_count": 9657,
+      "genre_count": 22,
+      "vote_share_pct": 56.3637,
+      "film_genre_share_pct": 57.0205
+    },
+    {
+      "year": 2019,
+      "group": "top_three",
+      "total_votes": 46599718,
+      "film_genre_count": 7279,
+      "genre_count": 3,
+      "vote_share_pct": 43.6363,
+      "film_genre_share_pct": 42.9795
+    },
+    {
+      "year": 2020,
+      "group": "other_genres",
+      "total_votes": 28304018,
+      "film_genre_count": 7780,
+      "genre_count": 21,
+      "vote_share_pct": 55.0658,
+      "film_genre_share_pct": 59.4801
+    },
+    {
+      "year": 2020,
+      "group": "top_three",
+      "total_votes": 23096303,
+      "film_genre_count": 5300,
+      "genre_count": 3,
+      "vote_share_pct": 44.9342,
+      "film_genre_share_pct": 40.5199
+    },
+    {
+      "year": 2021,
+      "group": "other_genres",
+      "total_votes": 43135096,
+      "film_genre_count": 9749,
+      "genre_count": 22,
+      "vote_share_pct": 53.5318,
+      "film_genre_share_pct": 66.939
+    },
+    {
+      "year": 2021,
+      "group": "top_three",
+      "total_votes": 37443328,
+      "film_genre_count": 4815,
+      "genre_count": 3,
+      "vote_share_pct": 46.4682,
+      "film_genre_share_pct": 33.061
+    },
+    {
+      "year": 2022,
+      "group": "other_genres",
+      "total_votes": 45650558,
+      "film_genre_count": 9757,
+      "genre_count": 22,
+      "vote_share_pct": 53.6101,
+      "film_genre_share_pct": 57.4347
+    },
+    {
+      "year": 2022,
+      "group": "top_three",
+      "total_votes": 39502345,
+      "film_genre_count": 7231,
+      "genre_count": 3,
+      "vote_share_pct": 46.3899,
+      "film_genre_share_pct": 42.5653
+    },
+    {
+      "year": 2023,
+      "group": "other_genres",
+      "total_votes": 42955559,
+      "film_genre_count": 9741,
+      "genre_count": 22,
+      "vote_share_pct": 55.2357,
+      "film_genre_share_pct": 56.2348
+    },
+    {
+      "year": 2023,
+      "group": "top_three",
+      "total_votes": 34812242,
+      "film_genre_count": 7581,
+      "genre_count": 3,
+      "vote_share_pct": 44.7643,
+      "film_genre_share_pct": 43.7652
+    },
+    {
+      "year": 2024,
+      "group": "other_genres",
+      "total_votes": 36404334,
+      "film_genre_count": 9748,
+      "genre_count": 23,
+      "vote_share_pct": 57.0864,
+      "film_genre_share_pct": 57.9652
+    },
+    {
+      "year": 2024,
+      "group": "top_three",
+      "total_votes": 27366278,
+      "film_genre_count": 7069,
+      "genre_count": 3,
+      "vote_share_pct": 42.9136,
+      "film_genre_share_pct": 42.0348
+    },
+    {
+      "year": 2025,
+      "group": "other_genres",
+      "total_votes": 34237626,
+      "film_genre_count": 8813,
+      "genre_count": 22,
+      "vote_share_pct": 60.678,
+      "film_genre_share_pct": 57.9117
+    },
+    {
+      "year": 2025,
+      "group": "top_three",
+      "total_votes": 22187475,
+      "film_genre_count": 6405,
+      "genre_count": 3,
+      "vote_share_pct": 39.322,
+      "film_genre_share_pct": 42.0883
+    }
+  ]
+}
