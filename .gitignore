@@ -5,3 +5,4 @@ Project_NUSSBAUMER_CHAMPOURLIER/checkpoints/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.serena/
