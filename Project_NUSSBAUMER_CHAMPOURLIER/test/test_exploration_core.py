@@ -25,14 +25,15 @@ class ExplorationCoreTests(unittest.TestCase):
 
     def test_feature_filter_and_runtime_outlier(self) -> None:
         rows = [
-            (f"tt{i}", "movie", f"Film {i}", "2000", "60", "Drama")
-            for i in range(10)
+            (f"tt{i}", "movie", f"Film {i}", "2000", str(minutes), "Documentary")
+            for i, minutes in enumerate(range(60, 110, 5))
         ]
         rows.extend(
             [
-                ("tt10", "movie", "Long film", "2000", "180", "Drama"),
-                ("tt11", "movie", "Short", "2000", "30", "Drama"),
-                ("tt12", "tvSeries", "Series", "2000", "180", "Drama"),
+                ("tt10", "movie", "Long film", "2000", "400", "Documentary"),
+                ("tt11", "movie", "Extreme film", "2000", "51420", "Documentary"),
+                ("tt12", "movie", "Short", "2000", "30", "Documentary"),
+                ("tt13", "tvSeries", "Series", "2000", "180", "Documentary"),
             ]
         )
         titles = self.spark.createDataFrame(
@@ -44,10 +45,31 @@ class ExplorationCoreTests(unittest.TestCase):
         )
         movies = movies_by_genre(titles)
 
-        self.assertEqual(movies.count(), 11)
+        self.assertEqual(movies.count(), 12)
         self.assertEqual(
-            [row.tconst for row in runtime_outliers(movies).collect()],
-            ["tt10"],
+            {row.tconst for row in runtime_outliers(movies).collect()},
+            {"tt10", "tt11"},
+        )
+
+    def test_outlier_pair_count_can_exceed_distinct_movie_count(self) -> None:
+        rows = [
+            (f"tt{i}", "movie", f"Film {i}", "2000", str(minutes), "Drama,Comedy")
+            for i, minutes in enumerate([60] * 10 + [400])
+        ]
+        titles = self.spark.createDataFrame(
+            rows,
+            [
+                "tconst", "titleType", "primaryTitle", "startYear",
+                "runtimeMinutes", "genres",
+            ],
+        )
+        outliers = runtime_outliers(movies_by_genre(titles))
+
+        self.assertEqual(outliers.count(), 2)
+        self.assertEqual(outliers.select("tconst").distinct().count(), 1)
+        self.assertEqual(
+            {row.genre for row in outliers.select("genre").collect()},
+            {"Drama", "Comedy"},
         )
 
     def test_vote_ranking_and_comparison_with_other_genres(self) -> None:

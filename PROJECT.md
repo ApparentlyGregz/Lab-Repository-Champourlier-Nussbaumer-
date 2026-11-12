@@ -74,7 +74,7 @@ $image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10
 docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/exploration_core.py
 ```
 
-Le résultat compact est enregistré dans `results/exploration_core.json`. La liste complète des durées atypiques est générée dans `output/runtime_outliers.parquet` et peut être relue avec Spark. Les calculs utilisent les films de type `movie` d'au moins 60 minutes. Une durée est marquée comme atypique au-delà de deux écarts types par rapport à la moyenne du genre. Pour les années 1980 à 2025, la popularité d'un genre correspond à la somme des votes IMDb des films notés. Un film présent dans plusieurs genres contribue à chacun de ces genres.
+Le résultat compact est enregistré dans `results/exploration_core.json`. La liste complète des durées atypiques est générée dans `output/runtime_outliers.parquet` et peut être relue avec Spark. Le tableau `results/runtime_outliers_by_genre.csv` résume les résultats par genre et est versionné pour préparer le rapport. Les calculs utilisent les films de type `movie` d'au moins 60 minutes. Pour chaque genre, une durée est marquée comme atypique si elle est inférieure à Q1 − 1,5 × IQR ou supérieure à Q3 + 1,5 × IQR, où IQR = Q3 − Q1. Le total des lignes atypiques compte les couples film/genre ; le résultat indique aussi le nombre de films distincts. Pour les années 1980 à 2025, la popularité d'un genre correspond à la somme des votes IMDb des films notés. Un film présent dans plusieurs genres contribue à chacun de ces genres.
 
 ## Usage d'outils d'IA
 

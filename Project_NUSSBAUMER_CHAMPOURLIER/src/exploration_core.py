@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 from pathlib import Path
 
@@ -13,7 +14,8 @@ from src.imdb_loader import load_imdb_tables
 
 
 FEATURE_MINUTES = 60
-OUTLIER_STANDARD_DEVIATIONS = 2
+IQR_MULTIPLIER = 1.5
+QUARTILE_ACCURACY = 10000
 FIRST_YEAR = 1980
 LAST_YEAR = 2025
 
@@ -37,21 +39,46 @@ def movies_by_genre(titles: DataFrame) -> DataFrame:
 
 
 def runtime_outliers(movies: DataFrame) -> DataFrame:
-    """Find movies more than two population standard deviations from genre mean."""
+    """Find runtimes beyond each genre's Tukey IQR fences."""
     genre_stats = movies.groupBy("genre").agg(
         F.count(F.lit(1)).alias("genre_movies"),
         F.avg("runtime_minutes").alias("genre_average_minutes"),
-        F.stddev_pop("runtime_minutes").alias("genre_stddev_minutes"),
+        F.percentile_approx(
+            "runtime_minutes", [0.25, 0.5, 0.75], QUARTILE_ACCURACY
+        ).alias("quartiles"),
+    )
+    genre_stats = (
+        genre_stats.withColumn("genre_q1_minutes", F.col("quartiles")[0])
+        .withColumn("genre_median_minutes", F.col("quartiles")[1])
+        .withColumn("genre_q3_minutes", F.col("quartiles")[2])
+        .withColumn(
+            "genre_iqr_minutes",
+            F.col("genre_q3_minutes") - F.col("genre_q1_minutes"),
+        )
+        .withColumn(
+            "lower_fence_minutes",
+            F.col("genre_q1_minutes")
+            - IQR_MULTIPLIER * F.col("genre_iqr_minutes"),
+        )
+        .withColumn(
+            "upper_fence_minutes",
+            F.col("genre_q3_minutes")
+            + IQR_MULTIPLIER * F.col("genre_iqr_minutes"),
+        )
+        .drop("quartiles")
     )
     return (
         movies.join(genre_stats, "genre")
-        .where(F.col("genre_stddev_minutes") > 0)
         .withColumn(
-            "z_score",
-            (F.col("runtime_minutes") - F.col("genre_average_minutes"))
-            / F.col("genre_stddev_minutes"),
+            "distance_beyond_fence_minutes",
+            F.when(
+                F.col("runtime_minutes") < F.col("lower_fence_minutes"),
+                F.col("lower_fence_minutes") - F.col("runtime_minutes"),
+            ).otherwise(
+                F.col("runtime_minutes") - F.col("upper_fence_minutes")
+            ),
         )
-        .where(F.abs(F.col("z_score")) > OUTLIER_STANDARD_DEVIATIONS)
+        .where(F.col("distance_beyond_fence_minutes") > 0)
     )
 
 
@@ -133,14 +160,32 @@ def main() -> None:
             str(outlier_path)
         )
         saved_outliers = spark.read.parquet(str(outlier_path))
-        outlier_count = saved_outliers.count()
+        outlier_pair_count = saved_outliers.count()
+        distinct_movie_count = saved_outliers.select("tconst").distinct().count()
+        by_genre = saved_outliers.groupBy("genre").agg(
+            F.count(F.lit(1)).alias("outlier_pairs"),
+            F.countDistinct("tconst").alias("distinct_movies"),
+            F.first("genre_movies").alias("genre_movies"),
+            F.first("genre_average_minutes").alias("genre_average_minutes"),
+            F.first("genre_median_minutes").alias("genre_median_minutes"),
+            F.first("genre_iqr_minutes").alias("genre_iqr_minutes"),
+            F.first("lower_fence_minutes").alias("lower_fence_minutes"),
+            F.first("upper_fence_minutes").alias("upper_fence_minutes"),
+        )
+        genre_rows = [
+            row.asDict() for row in by_genre.orderBy("genre").collect()
+        ]
         examples = [
             row.asDict()
             for row in saved_outliers.orderBy(
-                F.desc(F.abs(F.col("z_score")))
+                F.desc("distance_beyond_fence_minutes"), F.asc("tconst")
             ).limit(20).collect()
         ]
-        print(f"Runtime outliers: {outlier_count:,}", flush=True)
+        print(
+            f"Runtime outliers: {outlier_pair_count:,} film/genre pairs, "
+            f"{distinct_movie_count:,} distinct movies",
+            flush=True,
+        )
 
         top_three, comparison = genre_popularity(
             movies, tables["title.ratings"]
@@ -153,19 +198,29 @@ def main() -> None:
             row.asDict()
             for row in comparison.orderBy("year", "group").collect()
         ]
+        args.results_dir.mkdir(parents=True, exist_ok=True)
+        summary_path = args.results_dir / "runtime_outliers_by_genre.csv"
+        with summary_path.open("w", encoding="utf-8", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=by_genre.columns)
+            writer.writeheader()
+            writer.writerows(genre_rows)
+
         result = {
             "definitions": {
                 "feature_minimum_minutes": FEATURE_MINUTES,
-                "runtime_outlier_standard_deviations": OUTLIER_STANDARD_DEVIATIONS,
+                "runtime_outlier_method": "Tukey_IQR",
+                "runtime_outlier_iqr_multiplier": IQR_MULTIPLIER,
+                "runtime_quartile_accuracy": QUARTILE_ACCURACY,
                 "popularity_metric": "sum_of_IMDb_numVotes",
                 "popularity_years": [FIRST_YEAR, LAST_YEAR],
             },
-            "runtime_outlier_count": outlier_count,
+            "runtime_outlier_pair_count": outlier_pair_count,
+            "runtime_outlier_distinct_movie_count": distinct_movie_count,
+            "runtime_outliers_by_genre": genre_rows,
             "runtime_outlier_examples": examples,
             "top_three_genres_by_year": top_rows,
             "top_three_vs_others_by_year": comparison_rows,
         }
-        args.results_dir.mkdir(parents=True, exist_ok=True)
         destination = args.results_dir / "exploration_core.json"
         destination.write_text(
             json.dumps(result, ensure_ascii=False, indent=2) + "\n",
