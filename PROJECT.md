@@ -54,6 +54,18 @@ docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $i
 docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python -m test.check_full_data
 ```
 
+## Préparation et qualité des données
+
+Depuis la racine du dépôt, après le téléchargement des archives :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/data_quality.py
+```
+
+Le résultat est enregistré dans `Project_NUSSBAUMER_CHAMPOURLIER/results/data_quality.json`. Le script conserve les colonnes brutes, ajoute des colonnes nettoyées et des indicateurs d'anomalies dans Spark, et sépare les références valides des références absentes. Les tableaux finaux et leur interprétation seront rédigés par le groupe dans `REPORT.md`.
+
 ## Usage d'outils d'IA
 
-OpenAI Codex a aidé à écrire le chargeur PySpark `src/imdb_loader.py`, les tests de chargement et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.
+OpenAI Codex a aidé à écrire le chargeur PySpark, les contrôles de qualité, leurs tests et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.
