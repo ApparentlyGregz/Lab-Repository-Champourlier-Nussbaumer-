@@ -1,0 +1,5 @@
+roles,person_movie_pairs,people
+director + writer,329043,157759
+actor + director + writer,52067,33370
+actor + writer,43513,32858
+actor + director,19906,13270
