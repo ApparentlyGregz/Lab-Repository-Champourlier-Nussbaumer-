@@ -1,0 +1,1192 @@
+{
+  "definitions": {
+    "career_minimum_year_span": 20,
+    "career_minimum_movies": 15,
+    "career_latest_release_year": 2025,
+    "movie_minimum_votes": 1000,
+    "career_movie_count_basis": "rated_movies_meeting_vote_threshold",
+    "career_early_period": "first_half_of_release_year_span_inclusive",
+    "career_peak": "early_max_and_early_mean_rating_both_exceed_late_values",
+    "role_set": [
+      "actor",
+      "director",
+      "writer"
+    ],
+    "role_comparison": "within_person_rated_movie_averages"
+  },
+  "actors_with_early_peak_count": 1947,
+  "actors_with_early_peak_examples": [
+    {
+      "nconst": "nm0000821",
+      "primaryName": "Amitabh Bachchan",
+      "movie_count": 121,
+      "first_year": 1971,
+      "last_year": 2024,
+      "early_rated_movies": 41,
+      "late_rated_movies": 80,
+      "early_peak_rating": 8.3,
+      "late_peak_rating": 8.1,
+      "early_average_rating": 7.053658536585367,
+      "late_average_rating": 6.067499999999999,
+      "early_peak_movie_id": "tt0072783",
+      "early_peak_votes": 14185,
+      "late_peak_movie_id": "tt0375611",
+      "late_peak_votes": 37853,
+      "early_total_votes": 246037,
+      "late_total_votes": 1820782
+    },
+    {
+      "nconst": "nm0474774",
+      "primaryName": "Akshay Kumar",
+      "movie_count": 119,
+      "first_year": 1991,
+      "last_year": 2025,
+      "early_rated_movies": 55,
+      "late_rated_movies": 64,
+      "early_peak_rating": 8.2,
+      "late_peak_rating": 8.1,
+      "early_average_rating": 5.830909090909091,
+      "late_average_rating": 5.7890625,
+      "early_peak_movie_id": "tt0242519",
+      "early_peak_votes": 82464,
+      "late_peak_movie_id": "tt2283748",
+      "late_peak_votes": 72445,
+      "early_total_votes": 557132,
+      "late_total_votes": 1678533
+    },
+    {
+      "nconst": "nm0103977",
+      "primaryName": "Brahmanandam",
+      "movie_count": 114,
+      "first_year": 1987,
+      "last_year": 2025,
+      "early_rated_movies": 29,
+      "late_rated_movies": 85,
+      "early_peak_rating": 8.9,
+      "late_peak_rating": 8.7,
+      "early_average_rating": 7.282758620689655,
+      "late_average_rating": 6.256470588235293,
+      "early_peak_movie_id": "tt0249336",
+      "early_peak_votes": 3624,
+      "late_peak_movie_id": "tt31100572",
+      "late_peak_votes": 2639,
+      "early_total_votes": 117769,
+      "late_total_votes": 416316
+    },
+    {
+      "nconst": "nm0080238",
+      "primaryName": "Tanikella Bharani",
+      "movie_count": 110,
+      "first_year": 1989,
+      "last_year": 2025,
+      "early_rated_movies": 24,
+      "late_rated_movies": 86,
+      "early_peak_rating": 8.8,
+      "late_peak_rating": 8.5,
+      "early_average_rating": 6.987500000000001,
+      "late_average_rating": 6.355813953488372,
+      "early_peak_movie_id": "tt0311594",
+      "early_peak_votes": 6850,
+      "late_peak_movie_id": "tt36106718",
+      "late_peak_votes": 2067,
+      "early_total_votes": 94469,
+      "late_total_votes": 353369
+    },
+    {
+      "nconst": "nm0000168",
+      "primaryName": "Samuel L. Jackson",
+      "movie_count": 106,
+      "first_year": 1987,
+      "last_year": 2025,
+      "early_rated_movies": 53,
+      "late_rated_movies": 53,
+      "early_peak_rating": 8.8,
+      "late_peak_rating": 8.5,
+      "early_average_rating": 6.458490566037736,
+      "late_average_rating": 6.279245283018865,
+      "early_peak_movie_id": "tt0110912",
+      "early_peak_votes": 2482332,
+      "late_peak_movie_id": "tt1853728",
+      "late_peak_votes": 1925687,
+      "early_total_votes": 10541670,
+      "late_total_votes": 13229776
+    },
+    {
+      "nconst": "nm0000367",
+      "primaryName": "Gérard Depardieu",
+      "movie_count": 102,
+      "first_year": 1973,
+      "last_year": 2022,
+      "early_rated_movies": 46,
+      "late_rated_movies": 56,
+      "early_peak_rating": 8.1,
+      "late_peak_rating": 7.5,
+      "early_average_rating": 6.750000000000001,
+      "late_average_rating": 6.008928571428571,
+      "early_peak_movie_id": "tt0091288",
+      "early_peak_votes": 29829,
+      "late_peak_movie_id": "tt0450188",
+      "late_peak_votes": 94872,
+      "early_total_votes": 372019,
+      "late_total_votes": 936969
+    },
+    {
+      "nconst": "nm0000246",
+      "primaryName": "Bruce Willis",
+      "movie_count": 101,
+      "first_year": 1987,
+      "last_year": 2023,
+      "early_rated_movies": 39,
+      "late_rated_movies": 62,
+      "early_peak_rating": 8.8,
+      "late_peak_rating": 7.7,
+      "early_average_rating": 6.476923076923077,
+      "late_average_rating": 4.925806451612902,
+      "early_peak_movie_id": "tt0110912",
+      "early_peak_votes": 2482332,
+      "late_peak_movie_id": "tt1748122",
+      "late_peak_votes": 385992,
+      "early_total_votes": 10364265,
+      "late_total_votes": 5094759
+    },
+    {
+      "nconst": "nm0482320",
+      "primaryName": "Mohanlal",
+      "movie_count": 99,
+      "first_year": 1985,
+      "last_year": 2025,
+      "early_rated_movies": 45,
+      "late_rated_movies": 54,
+      "early_peak_rating": 8.8,
+      "late_peak_rating": 8.4,
+      "early_average_rating": 8.066666666666666,
+      "late_average_rating": 6.04444444444444,
+      "early_peak_movie_id": "tt0237376",
+      "early_peak_votes": 10031,
+      "late_peak_movie_id": "tt3417422",
+      "late_peak_votes": 50172,
+      "early_total_votes": 173051,
+      "late_total_votes": 403735
+    },
+    {
+      "nconst": "nm0000134",
+      "primaryName": "Robert De Niro",
+      "movie_count": 98,
+      "first_year": 1968,
+      "last_year": 2025,
+      "early_rated_movies": 43,
+      "late_rated_movies": 55,
+      "early_peak_rating": 9.0,
+      "late_peak_rating": 8.3,
+      "early_average_rating": 6.890697674418604,
+      "late_average_rating": 6.214545454545453,
+      "early_peak_movie_id": "tt0071562",
+      "early_peak_votes": 1523255,
+      "late_peak_movie_id": "tt7286456",
+      "late_peak_votes": 1736095,
+      "early_total_votes": 9206042,
+      "late_total_votes": 8798032
+    },
+    {
+      "nconst": "nm0000353",
+      "primaryName": "Willem Dafoe",
+      "movie_count": 96,
+      "first_year": 1981,
+      "last_year": 2025,
+      "early_rated_movies": 32,
+      "late_rated_movies": 64,
+      "early_peak_rating": 8.2,
+      "late_peak_rating": 8.1,
+      "early_average_rating": 6.61875,
+      "late_average_rating": 6.3484375,
+      "early_peak_movie_id": "tt0266543",
+      "early_peak_votes": 1231145,
+      "late_peak_movie_id": "tt10872600",
+      "late_peak_votes": 1087357,
+      "early_total_votes": 5140786,
+      "late_total_votes": 9612246
+    },
+    {
+      "nconst": "nm0001017",
+      "primaryName": "John Carradine",
+      "movie_count": 86,
+      "first_year": 1936,
+      "last_year": 1989,
+      "early_rated_movies": 50,
+      "late_rated_movies": 36,
+      "early_peak_rating": 8.1,
+      "late_peak_rating": 7.6,
+      "early_average_rating": 6.390000000000002,
+      "late_average_rating": 4.797222222222221,
+      "early_peak_movie_id": "tt0032551",
+      "early_peak_votes": 107966,
+      "late_peak_movie_id": "tt0075213",
+      "late_peak_votes": 29864,
+      "early_total_votes": 436545,
+      "late_total_votes": 293736
+    },
+    {
+      "nconst": "nm1388202",
+      "primaryName": "Siddique",
+      "movie_count": 86,
+      "first_year": 1987,
+      "last_year": 2025,
+      "early_rated_movies": 13,
+      "late_rated_movies": 73,
+      "early_peak_rating": 9.0,
+      "late_peak_rating": 8.4,
+      "early_average_rating": 7.730769230769231,
+      "late_average_rating": 6.2753424657534245,
+      "early_peak_movie_id": "tt0353975",
+      "early_peak_votes": 6638,
+      "late_peak_movie_id": "tt3417422",
+      "late_peak_votes": 50172,
+      "early_total_votes": 33256,
+      "late_total_votes": 390241
+    },
+    {
+      "nconst": "nm0000172",
+      "primaryName": "Harvey Keitel",
+      "movie_count": 85,
+      "first_year": 1967,
+      "last_year": 2025,
+      "early_rated_movies": 43,
+      "late_rated_movies": 42,
+      "early_peak_rating": 8.2,
+      "late_peak_rating": 8.1,
+      "early_average_rating": 6.409302325581397,
+      "late_average_rating": 5.892857142857143,
+      "early_peak_movie_id": "tt0105236",
+      "early_peak_votes": 1186961,
+      "late_peak_movie_id": "tt2278388",
+      "late_peak_votes": 991859,
+      "early_total_votes": 2653945,
+      "late_total_votes": 3095644
+    },
+    {
+      "nconst": "nm0000012",
+      "primaryName": "Bette Davis",
+      "movie_count": 84,
+      "first_year": 1931,
+      "last_year": 1989,
+      "early_rated_movies": 67,
+      "late_rated_movies": 17,
+      "early_peak_rating": 8.2,
+      "late_peak_rating": 8.0,
+      "early_average_rating": 6.879104477611943,
+      "late_average_rating": 6.647058823529411,
+      "early_peak_movie_id": "tt0042192",
+      "early_peak_votes": 151175,
+      "late_peak_movie_id": "tt0056687",
+      "late_peak_votes": 68842,
+      "early_total_votes": 445507,
+      "late_total_votes": 205775
+    },
+    {
+      "nconst": "nm0000151",
+      "primaryName": "Morgan Freeman",
+      "movie_count": 83,
+      "first_year": 1980,
+      "last_year": 2024,
+      "early_rated_movies": 30,
+      "late_rated_movies": 53,
+      "early_peak_rating": 9.3,
+      "late_peak_rating": 9.1,
+      "early_average_rating": 6.779999999999999,
+      "late_average_rating": 6.235849056603773,
+      "early_peak_movie_id": "tt0111161",
+      "early_peak_votes": 3262894,
+      "late_peak_movie_id": "tt0468569",
+      "late_peak_votes": 3248732,
+      "early_total_votes": 7456563,
+      "late_total_votes": 13134050
+    },
+    {
+      "nconst": "nm0839017",
+      "primaryName": "Kemal Sunal",
+      "movie_count": 81,
+      "first_year": 1972,
+      "last_year": 1999,
+      "early_rated_movies": 58,
+      "late_rated_movies": 23,
+      "early_peak_rating": 9.1,
+      "late_peak_rating": 7.3,
+      "early_average_rating": 7.436206896551723,
+      "late_average_rating": 6.652173913043477,
+      "early_peak_movie_id": "tt0252487",
+      "early_peak_votes": 46975,
+      "late_peak_movie_id": "tt0252364",
+      "late_peak_votes": 4345,
+      "early_total_votes": 518429,
+      "late_total_votes": 76031
+    },
+    {
+      "nconst": "nm0007123",
+      "primaryName": "Mammootty",
+      "movie_count": 79,
+      "first_year": 1982,
+      "last_year": 2025,
+      "early_rated_movies": 24,
+      "late_rated_movies": 55,
+      "early_peak_rating": 8.9,
+      "late_peak_rating": 8.6,
+      "early_average_rating": 7.866666666666666,
+      "late_average_rating": 6.561818181818184,
+      "early_peak_movie_id": "tt0237820",
+      "early_peak_votes": 3756,
+      "late_peak_movie_id": "tt7738784",
+      "late_peak_votes": 19006,
+      "early_total_votes": 71825,
+      "late_total_votes": 242225
+    },
+    {
+      "nconst": "nm0000553",
+      "primaryName": "Liam Neeson",
+      "movie_count": 78,
+      "first_year": 1983,
+      "last_year": 2025,
+      "early_rated_movies": 30,
+      "late_rated_movies": 48,
+      "early_peak_rating": 9.0,
+      "late_peak_rating": 8.2,
+      "early_average_rating": 6.48,
+      "late_average_rating": 6.339583333333334,
+      "early_peak_movie_id": "tt0108052",
+      "early_peak_votes": 1612818,
+      "late_peak_movie_id": "tt0372784",
+      "late_peak_votes": 1753544,
+      "early_total_votes": 4406203,
+      "late_total_votes": 7412555
+    },
+    {
+      "nconst": "nm0000164",
+      "primaryName": "Anthony Hopkins",
+      "movie_count": 77,
+      "first_year": 1968,
+      "last_year": 2025,
+      "early_rated_movies": 29,
+      "late_rated_movies": 48,
+      "early_peak_rating": 8.6,
+      "late_peak_rating": 8.2,
+      "early_average_rating": 6.627586206896554,
+      "late_average_rating": 6.320833333333332,
+      "early_peak_movie_id": "tt0102926",
+      "early_peak_votes": 1765533,
+      "late_peak_movie_id": "tt10272386",
+      "late_peak_votes": 251908,
+      "early_total_votes": 2971865,
+      "late_total_votes": 6946868
+    },
+    {
+      "nconst": "nm0000215",
+      "primaryName": "Susan Sarandon",
+      "movie_count": 77,
+      "first_year": 1970,
+      "last_year": 2024,
+      "early_rated_movies": 26,
+      "late_rated_movies": 51,
+      "early_peak_rating": 7.6,
+      "late_peak_rating": 7.1,
+      "early_average_rating": 6.684615384615384,
+      "late_average_rating": 6.056862745098037,
+      "early_peak_movie_id": "tt0103074",
+      "early_peak_votes": 198334,
+      "late_peak_movie_id": "tt0461770",
+      "late_peak_votes": 227695,
+      "early_total_votes": 1060724,
+      "late_total_votes": 1960095
+    },
+    {
+      "nconst": "nm0000551",
+      "primaryName": "Dermot Mulroney",
+      "movie_count": 77,
+      "first_year": 1988,
+      "last_year": 2025,
+      "early_rated_movies": 28,
+      "late_rated_movies": 49,
+      "early_peak_rating": 7.5,
+      "late_peak_rating": 7.2,
+      "early_average_rating": 6.2142857142857135,
+      "late_average_rating": 5.504081632653062,
+      "early_peak_movie_id": "tt0113677",
+      "early_peak_votes": 22056,
+      "late_peak_movie_id": "tt1322269",
+      "late_peak_votes": 100790,
+      "early_total_votes": 838725,
+      "late_total_votes": 1601926
+    },
+    {
+      "nconst": "nm0001803",
+      "primaryName": "Danny Trejo",
+      "movie_count": 77,
+      "first_year": 1995,
+      "last_year": 2025,
+      "early_rated_movies": 29,
+      "late_rated_movies": 48,
+      "early_peak_rating": 7.5,
+      "late_peak_rating": 7.2,
+      "early_average_rating": 5.193103448275861,
+      "late_average_rating": 4.6083333333333325,
+      "early_peak_movie_id": "tt0462322",
+      "early_peak_votes": 198261,
+      "late_peak_movie_id": "tt2262227",
+      "late_peak_votes": 86352,
+      "early_total_votes": 2020251,
+      "late_total_votes": 539977
+    },
+    {
+      "nconst": "nm0000418",
+      "primaryName": "Danny Glover",
+      "movie_count": 76,
+      "first_year": 1984,
+      "last_year": 2022,
+      "early_rated_movies": 27,
+      "late_rated_movies": 49,
+      "early_peak_rating": 7.7,
+      "late_peak_rating": 7.6,
+      "early_average_rating": 6.58888888888889,
+      "late_average_rating": 5.6612244897959165,
+      "early_peak_movie_id": "tt0088939",
+      "early_peak_votes": 105798,
+      "late_peak_movie_id": "tt0387564",
+      "late_peak_votes": 520143,
+      "early_total_votes": 2203750,
+      "late_total_votes": 2213333
+    },
+    {
+      "nconst": "nm0000598",
+      "primaryName": "Dennis Quaid",
+      "movie_count": 73,
+      "first_year": 1979,
+      "last_year": 2025,
+      "early_rated_movies": 33,
+      "late_rated_movies": 40,
+      "early_peak_rating": 7.8,
+      "late_peak_rating": 7.5,
+      "early_average_rating": 6.460606060606063,
+      "late_average_rating": 6.154999999999998,
+      "early_peak_movie_id": "tt0086197",
+      "early_peak_votes": 68756,
+      "late_peak_movie_id": "tt8385474",
+      "late_peak_votes": 34115,
+      "early_total_votes": 1204110,
+      "late_total_votes": 2876139
+    },
+    {
+      "nconst": "nm0004051",
+      "primaryName": "Brian Cox",
+      "movie_count": 73,
+      "first_year": 1986,
+      "last_year": 2025,
+      "early_rated_movies": 29,
+      "late_rated_movies": 44,
+      "early_peak_rating": 7.8,
+      "late_peak_rating": 7.7,
+      "early_average_rating": 6.66551724137931,
+      "late_average_rating": 6.127272727272728,
+      "early_peak_movie_id": "tt0258463",
+      "early_peak_votes": 624177,
+      "late_peak_movie_id": "tt0443706",
+      "late_peak_votes": 697079,
+      "early_total_votes": 4279481,
+      "late_total_votes": 1817909
+    }
+  ],
+  "multi_talented_people_count": 242663,
+  "multi_talented_people_examples": [
+    {
+      "nconst": "nm0183659",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 411,
+      "multi_role_movie_count": 294,
+      "primaryName": "Gérard Courant"
+    },
+    {
+      "nconst": "nm3248232",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 221,
+      "multi_role_movie_count": 219,
+      "primaryName": "Jason Young"
+    },
+    {
+      "nconst": "nm0001238",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 209,
+      "multi_role_movie_count": 159,
+      "primaryName": "Jesús Franco"
+    },
+    {
+      "nconst": "nm0772905",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 134,
+      "multi_role_movie_count": 119,
+      "primaryName": "Eckhart Schmidt"
+    },
+    {
+      "nconst": "nm0939147",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 237,
+      "multi_role_movie_count": 118,
+      "primaryName": "Jing Wong"
+    },
+    {
+      "nconst": "nm12171775",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 214,
+      "multi_role_movie_count": 118,
+      "primaryName": "Nick Randall"
+    },
+    {
+      "nconst": "nm0879697",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 166,
+      "multi_role_movie_count": 118,
+      "primaryName": "Yücel Uçanoglu"
+    },
+    {
+      "nconst": "nm1112250",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 143,
+      "multi_role_movie_count": 110,
+      "primaryName": "William A. Baker"
+    },
+    {
+      "nconst": "nm0644554",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 440,
+      "multi_role_movie_count": 107,
+      "primaryName": "Kinya Ogawa"
+    },
+    {
+      "nconst": "nm0462051",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 388,
+      "multi_role_movie_count": 107,
+      "primaryName": "Satoru Kobayashi"
+    },
+    {
+      "nconst": "nm0061792",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 189,
+      "multi_role_movie_count": 106,
+      "primaryName": "Godfrey Ho"
+    },
+    {
+      "nconst": "nm0554924",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 178,
+      "multi_role_movie_count": 106,
+      "primaryName": "Gilberto Martínez Solares"
+    },
+    {
+      "nconst": "nm0781261",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 224,
+      "multi_role_movie_count": 104,
+      "primaryName": "Osman F. Seden"
+    },
+    {
+      "nconst": "nm10992938",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 104,
+      "multi_role_movie_count": 104,
+      "primaryName": "Sireah Warden"
+    },
+    {
+      "nconst": "nm5563914",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 121,
+      "multi_role_movie_count": 102,
+      "primaryName": "Curtis Everitt"
+    },
+    {
+      "nconst": "nm0263765",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 132,
+      "multi_role_movie_count": 101,
+      "primaryName": "Semih Evin"
+    },
+    {
+      "nconst": "nm7042519",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 99,
+      "multi_role_movie_count": 98,
+      "primaryName": "Jorge Luis Villacorta Santamato"
+    },
+    {
+      "nconst": "nm0157137",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 121,
+      "multi_role_movie_count": 96,
+      "primaryName": "Giichi Nishihara"
+    },
+    {
+      "nconst": "nm4341114",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 147,
+      "multi_role_movie_count": 94,
+      "primaryName": "Dustin Ferguson"
+    },
+    {
+      "nconst": "nm0682176",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 96,
+      "multi_role_movie_count": 94,
+      "primaryName": "Harry Piel"
+    },
+    {
+      "nconst": "nm2869957",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 138,
+      "multi_role_movie_count": 90,
+      "primaryName": "Kazuyoshi Sekine"
+    },
+    {
+      "nconst": "nm0654839",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 120,
+      "multi_role_movie_count": 89,
+      "primaryName": "Mariano Ozores"
+    },
+    {
+      "nconst": "nm0945282",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 149,
+      "multi_role_movie_count": 87,
+      "primaryName": "Yōji Yamada"
+    },
+    {
+      "nconst": "nm0409325",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "movie_count": 123,
+      "multi_role_movie_count": 87,
+      "primaryName": "Umetsugu Inoue"
+    },
+    {
+      "nconst": "nm5954636",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "movie_count": 88,
+      "multi_role_movie_count": 84,
+      "primaryName": "Sergey A."
+    }
+  ],
+  "multi_talented_paired_summary": {
+    "paired_people": 8697,
+    "mean_rating_difference": -0.001368133763780652,
+    "median_rating_difference": 0.031481481481481666,
+    "people_with_higher_multi_role_average": 4441
+  },
+  "multi_talented_examples": [
+    {
+      "nconst": "nm0000095",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 54,
+      "single_role_rated_movies": 7,
+      "multi_role_average_rating": 6.887037037037039,
+      "single_role_average_rating": 5.871428571428571,
+      "multi_role_total_votes": 3673006,
+      "single_role_total_votes": 222194,
+      "rating_difference": 1.0156084656084676,
+      "primaryName": "Woody Allen"
+    },
+    {
+      "nconst": "nm0001348",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 41,
+      "single_role_rated_movies": 6,
+      "multi_role_average_rating": 7.109756097560974,
+      "single_role_average_rating": 6.466666666666666,
+      "multi_role_total_votes": 633138,
+      "single_role_total_votes": 507962,
+      "rating_difference": 0.6430894308943085,
+      "primaryName": "Werner Herzog"
+    },
+    {
+      "nconst": "nm0001031",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 37,
+      "single_role_rated_movies": 8,
+      "multi_role_average_rating": 6.816216216216216,
+      "single_role_average_rating": 6.750000000000001,
+      "multi_role_total_votes": 135011,
+      "single_role_total_votes": 228090,
+      "rating_difference": 0.06621621621621543,
+      "primaryName": "Claude Chabrol"
+    },
+    {
+      "nconst": "nm0000005",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 36,
+      "single_role_rated_movies": 6,
+      "multi_role_average_rating": 7.330555555555557,
+      "single_role_average_rating": 7.199999999999999,
+      "multi_role_total_votes": 924648,
+      "single_role_total_votes": 51284,
+      "rating_difference": 0.1305555555555573,
+      "primaryName": "Ingmar Bergman"
+    },
+    {
+      "nconst": "nm0000419",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 35,
+      "single_role_rated_movies": 5,
+      "multi_role_average_rating": 6.645714285714287,
+      "single_role_average_rating": 6.22,
+      "multi_role_total_votes": 426912,
+      "single_role_total_votes": 26999,
+      "rating_difference": 0.42571428571428704,
+      "primaryName": "Jean-Luc Godard"
+    },
+    {
+      "nconst": "nm1347153",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 35,
+      "single_role_rated_movies": 7,
+      "multi_role_average_rating": 5.362857142857143,
+      "single_role_average_rating": 6.42857142857143,
+      "multi_role_total_votes": 342795,
+      "single_role_total_votes": 2146371,
+      "rating_difference": -1.0657142857142867,
+      "primaryName": "Tyler Perry"
+    },
+    {
+      "nconst": "nm0000041",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 31,
+      "single_role_rated_movies": 10,
+      "multi_role_average_rating": 7.541935483870968,
+      "single_role_average_rating": 6.960000000000001,
+      "multi_role_total_votes": 1547921,
+      "single_role_total_votes": 808015,
+      "rating_difference": 0.5819354838709669,
+      "primaryName": "Akira Kurosawa"
+    },
+    {
+      "nconst": "nm0001238",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 30,
+      "single_role_rated_movies": 8,
+      "multi_role_average_rating": 4.859999999999999,
+      "single_role_average_rating": 4.5375000000000005,
+      "multi_role_total_votes": 60733,
+      "single_role_total_votes": 18107,
+      "rating_difference": 0.3224999999999989,
+      "primaryName": "Jesús Franco"
+    },
+    {
+      "nconst": "nm0006249",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 28,
+      "single_role_rated_movies": 6,
+      "multi_role_average_rating": 7.92857142857143,
+      "single_role_average_rating": 7.05,
+      "multi_role_total_votes": 167459,
+      "single_role_total_votes": 12158,
+      "rating_difference": 0.8785714285714299,
+      "primaryName": "Satyajit Ray"
+    },
+    {
+      "nconst": "nm0000694",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 27,
+      "single_role_rated_movies": 8,
+      "multi_role_average_rating": 6.996296296296298,
+      "single_role_average_rating": 6.4125,
+      "multi_role_total_votes": 395487,
+      "single_role_total_votes": 336673,
+      "rating_difference": 0.5837962962962981,
+      "primaryName": "Wim Wenders"
+    },
+    {
+      "nconst": "nm0000142",
+      "career_roles": [
+        "actor",
+        "director"
+      ],
+      "multi_role_rated_movies": 26,
+      "single_role_rated_movies": 40,
+      "multi_role_average_rating": 6.888461538461537,
+      "single_role_average_rating": 6.902499999999999,
+      "multi_role_total_votes": 3515660,
+      "single_role_total_votes": 5257562,
+      "rating_difference": -0.014038461538461888,
+      "primaryName": "Clint Eastwood"
+    },
+    {
+      "nconst": "nm0000697",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 26,
+      "single_role_rated_movies": 16,
+      "multi_role_average_rating": 7.384615384615385,
+      "single_role_average_rating": 6.98125,
+      "multi_role_total_votes": 1611427,
+      "single_role_total_votes": 225450,
+      "rating_difference": 0.40336538461538485,
+      "primaryName": "Billy Wilder"
+    },
+    {
+      "nconst": "nm0000230",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 38,
+      "multi_role_average_rating": 6.3199999999999985,
+      "single_role_average_rating": 5.605263157894735,
+      "multi_role_total_votes": 4749609,
+      "single_role_total_votes": 3213659,
+      "rating_difference": 0.7147368421052631,
+      "primaryName": "Sylvester Stallone"
+    },
+    {
+      "nconst": "nm0000320",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 4,
+      "multi_role_average_rating": 7.364,
+      "single_role_average_rating": 7.275,
+      "multi_role_total_votes": 349143,
+      "single_role_total_votes": 28751,
+      "rating_difference": 0.08899999999999952,
+      "primaryName": "Luis Buñuel"
+    },
+    {
+      "nconst": "nm0006445",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 1,
+      "multi_role_average_rating": 7.1480000000000015,
+      "single_role_average_rating": 5.5,
+      "multi_role_total_votes": 162195,
+      "single_role_total_votes": 18034,
+      "rating_difference": 1.6480000000000015,
+      "primaryName": "Éric Rohmer"
+    },
+    {
+      "nconst": "nm0352032",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 28,
+      "multi_role_average_rating": 7.508000000000002,
+      "single_role_average_rating": 7.685714285714283,
+      "multi_role_total_votes": 199166,
+      "single_role_total_votes": 391220,
+      "rating_difference": -0.1777142857142815,
+      "primaryName": "Kamal Haasan"
+    },
+    {
+      "nconst": "nm0654868",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 2,
+      "multi_role_average_rating": 7.611999999999999,
+      "single_role_average_rating": 7.0,
+      "multi_role_total_votes": 214730,
+      "single_role_total_votes": 2861,
+      "rating_difference": 0.6119999999999992,
+      "primaryName": "Yasujirō Ozu"
+    },
+    {
+      "nconst": "nm0698184",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 15,
+      "multi_role_average_rating": 6.823999999999999,
+      "single_role_average_rating": 7.12,
+      "multi_role_total_votes": 193787,
+      "single_role_total_votes": 186200,
+      "rating_difference": -0.29600000000000115,
+      "primaryName": "Priyadarshan"
+    },
+    {
+      "nconst": "nm0711745",
+      "career_roles": [
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 25,
+      "single_role_rated_movies": 3,
+      "multi_role_average_rating": 7.4079999999999995,
+      "single_role_average_rating": 6.333333333333333,
+      "multi_role_total_votes": 292057,
+      "single_role_total_votes": 17629,
+      "rating_difference": 1.0746666666666664,
+      "primaryName": "Mani Ratnam"
+    },
+    {
+      "nconst": "nm0001175",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 24,
+      "single_role_rated_movies": 16,
+      "multi_role_average_rating": 6.175,
+      "single_role_average_rating": 6.4624999999999995,
+      "multi_role_total_votes": 405091,
+      "single_role_total_votes": 436086,
+      "rating_difference": -0.28749999999999964,
+      "primaryName": "Blake Edwards"
+    },
+    {
+      "nconst": "nm0007139",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 24,
+      "single_role_rated_movies": 30,
+      "multi_role_average_rating": 6.366666666666667,
+      "single_role_average_rating": 6.2299999999999995,
+      "multi_role_total_votes": 139124,
+      "single_role_total_votes": 183078,
+      "rating_difference": 0.1366666666666676,
+      "primaryName": "Hark Tsui"
+    },
+    {
+      "nconst": "nm0893872",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 24,
+      "single_role_rated_movies": 8,
+      "multi_role_average_rating": 6.2250000000000005,
+      "single_role_average_rating": 6.325,
+      "multi_role_total_votes": 46173,
+      "single_role_total_votes": 131881,
+      "rating_difference": -0.09999999999999964,
+      "primaryName": "Carlo Verdone"
+    },
+    {
+      "nconst": "nm0939147",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 24,
+      "single_role_rated_movies": 11,
+      "multi_role_average_rating": 6.1125,
+      "single_role_average_rating": 6.5636363636363635,
+      "multi_role_total_votes": 93814,
+      "single_role_total_votes": 48705,
+      "rating_difference": -0.45113636363636367,
+      "primaryName": "Jing Wong"
+    },
+    {
+      "nconst": "nm0000019",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 23,
+      "single_role_rated_movies": 7,
+      "multi_role_average_rating": 7.247826086956521,
+      "single_role_average_rating": 7.457142857142856,
+      "multi_role_total_votes": 558024,
+      "single_role_total_votes": 70167,
+      "rating_difference": -0.20931677018633543,
+      "primaryName": "Federico Fellini"
+    },
+    {
+      "nconst": "nm0001202",
+      "career_roles": [
+        "actor",
+        "director",
+        "writer"
+      ],
+      "multi_role_rated_movies": 23,
+      "single_role_rated_movies": 4,
+      "multi_role_average_rating": 7.043478260869564,
+      "single_role_average_rating": 6.5249999999999995,
+      "multi_role_total_votes": 140098,
+      "single_role_total_votes": 15280,
+      "rating_difference": 0.5184782608695642,
+      "primaryName": "Rainer Werner Fassbinder"
+    }
+  ],
+  "multi_role_combinations": [
+    {
+      "roles": "director + writer",
+      "person_movie_pairs": 329043,
+      "people": 157759
+    },
+    {
+      "roles": "actor + director + writer",
+      "person_movie_pairs": 52067,
+      "people": 33370
+    },
+    {
+      "roles": "actor + writer",
+      "person_movie_pairs": 43513,
+      "people": 32858
+    },
+    {
+      "roles": "actor + director",
+      "person_movie_pairs": 19906,
+      "people": 13270
+    }
+  ]
+}
