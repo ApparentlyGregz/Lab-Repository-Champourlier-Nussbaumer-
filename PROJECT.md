@@ -54,6 +54,28 @@ docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $i
 docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python -m test.check_full_data
 ```
 
+## Préparation et qualité des données
+
+Depuis la racine du dépôt, après le téléchargement des archives :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/data_quality.py
+```
+
+Le résultat est enregistré dans `Project_NUSSBAUMER_CHAMPOURLIER/results/data_quality.json`. Le script conserve les colonnes brutes, ajoute des colonnes nettoyées et des indicateurs d'anomalies dans Spark, et sépare les références valides des références absentes. Les tableaux finaux et leur interprétation seront rédigés par le groupe dans `REPORT.md`.
+
+## Premières analyses
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/exploration_core.py
+```
+
+Le résultat compact est enregistré dans `results/exploration_core.json`. La liste complète des durées atypiques est générée dans `output/runtime_outliers.parquet` et peut être relue avec Spark. Le tableau `results/runtime_outliers_by_genre.csv` résume les résultats par genre et est versionné pour préparer le rapport. Les calculs utilisent les films de type `movie` d'au moins 60 minutes. Pour chaque genre, une durée est marquée comme atypique si elle est inférieure à Q1 − 1,5 × IQR ou supérieure à Q3 + 1,5 × IQR, où IQR = Q3 − Q1. Le total des lignes atypiques compte les couples film/genre ; le résultat indique aussi le nombre de films distincts. Pour les années 1980 à 2025, la popularité d'un genre correspond à la somme des votes IMDb des films notés. Un film présent dans plusieurs genres contribue à chacun de ces genres.
+
 ## Usage d'outils d'IA
 
-OpenAI Codex a aidé à écrire le chargeur PySpark `src/imdb_loader.py`, les tests de chargement et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.
+OpenAI Codex a aidé à écrire le chargeur PySpark, les contrôles de qualité, les premières analyses, leurs tests et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.
