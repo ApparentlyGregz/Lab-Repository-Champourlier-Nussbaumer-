@@ -1,4 +1,4 @@
-"""Checks actor career and multiple-role definitions on small IMDb-like data."""
+"""Check acting careers and role definitions on small IMDb-like data."""
 
 import unittest
 from pathlib import Path
@@ -29,19 +29,24 @@ class ExplorationPeopleTests(unittest.TestCase):
         years = list(range(2000, 2016)) + [2020]
         titles = self.spark.createDataFrame(
             [(f"{prefix}{i}", "movie", f"Film {prefix}{i}", str(year))
-             for prefix in ("a", "b") for i, year in enumerate(years)],
+             for prefix in ("a", "b") for i, year in enumerate(years)]
+            + [("a_future", "movie", "Announced film", "2031"),
+               ("a_low", "movie", "Few votes", "2024")],
             ["tconst", "titleType", "primaryTitle", "startYear"],
         )
         principals = self.spark.createDataFrame(
             [(f"{prefix}{i}", person, "actor")
              for prefix, person in (("a", "nm1"), ("b", "nm2"))
-             for i in range(len(years))],
+             for i in range(len(years))]
+            + [("a_future", "nm1", "actor"),
+               ("a_low", "nm1", "actor")],
             ["tconst", "nconst", "category"],
         )
         ratings = self.spark.createDataFrame(
             [(f"{prefix}{i}",
-              "8.0" if (year <= 2010) == (prefix == "a") else "6.0", "10")
-             for prefix in ("a", "b") for i, year in enumerate(years)],
+              "8.0" if (year <= 2010) == (prefix == "a") else "6.0", "1000")
+             for prefix in ("a", "b") for i, year in enumerate(years)]
+            + [("a_low", "9.9", "2")],
             ["tconst", "averageRating", "numVotes"],
         )
         names = self.spark.createDataFrame(
@@ -54,10 +59,13 @@ class ExplorationPeopleTests(unittest.TestCase):
 
         self.assertEqual([row.nconst for row in rows], ["nm1"])
         self.assertEqual(rows[0].movie_count, 17)
+        self.assertEqual(rows[0].last_year, 2020)
         self.assertEqual(rows[0].early_peak_rating, 8.0)
         self.assertEqual(rows[0].late_peak_rating, 6.0)
+        self.assertEqual(rows[0].early_peak_votes, 1000)
+        self.assertEqual(rows[0].late_peak_votes, 1000)
 
-    def test_multi_role_talent_and_within_person_rating_comparison(self) -> None:
+    def test_multi_role_talent_and_rating_comparison(self) -> None:
         titles = self.spark.createDataFrame(
             [(f"tt{i}", "movie", f"Film {i}", "2000") for i in range(1, 5)],
             ["tconst", "titleType", "primaryTitle", "startYear"],
@@ -80,8 +88,8 @@ class ExplorationPeopleTests(unittest.TestCase):
             ["tconst", "nconst", "category"],
         )
         ratings = self.spark.createDataFrame(
-            [("tt1", "8.0", "10"), ("tt2", "6.0", "10"),
-             ("tt3", "5.0", "10"), ("tt4", "7.0", "10")],
+            [("tt1", "8.0", "2000"), ("tt2", "6.0", "1000"),
+             ("tt3", "5.0", "1000"), ("tt4", "7.0", "1000")],
             ["tconst", "averageRating", "numVotes"],
         )
         names = self.spark.createDataFrame(
@@ -104,6 +112,8 @@ class ExplorationPeopleTests(unittest.TestCase):
         self.assertEqual(paired_rows[0].multi_role_average_rating, 8.0)
         self.assertEqual(paired_rows[0].single_role_average_rating, 5.5)
         self.assertEqual(paired_rows[0].rating_difference, 2.5)
+        self.assertEqual(paired_rows[0].multi_role_total_votes, 2000)
+        self.assertEqual(paired_rows[0].single_role_total_votes, 2000)
         self.assertEqual(combo_rows["actor + director"].person_movie_pairs, 1)
         self.assertEqual(combo_rows["actor + writer"].person_movie_pairs, 1)
 

@@ -22,7 +22,9 @@ class ExplorationJoinsTests(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls.spark.stop()
 
-    def test_directors_need_exactly_one_high_film_and_low_other_average(self) -> None:
+    def test_directors_need_one_high_film_and_low_other_average(
+        self,
+    ) -> None:
         films = self.spark.createDataFrame(
             [
                 ("tt1", "movie", "Excellent", "2000"),
@@ -30,6 +32,7 @@ class ExplorationJoinsTests(unittest.TestCase):
                 ("tt3", "movie", "Weak B", "2002"),
                 ("tt4", "movie", "Excellent 2", "2003"),
                 ("tt5", "short", "Short", "2004"),
+                ("tt6", "movie", "Too few votes", "2005"),
             ],
             ["tconst", "titleType", "primaryTitle", "startYear"],
         )
@@ -37,15 +40,15 @@ class ExplorationJoinsTests(unittest.TestCase):
             [
                 ("tt1", "nm1,nm2"), ("tt2", "nm1,nm2"),
                 ("tt3", "nm1,nm2"), ("tt4", "nm2"),
-                ("tt5", "nm1"),
+            ("tt5", "nm1"), ("tt6", "nm1"),
             ],
             ["tconst", "directors"],
         )
         ratings = self.spark.createDataFrame(
             [
-                ("tt1", "8.0", "100"), ("tt2", "5.0", "10"),
-                ("tt3", "6.0", "10"), ("tt4", "8.5", "100"),
-                ("tt5", "9.0", "100"),
+                ("tt1", "8.0", "2000"), ("tt2", "5.0", "1000"),
+                ("tt3", "6.0", "1000"), ("tt4", "8.5", "2000"),
+                ("tt5", "9.0", "2000"), ("tt6", "9.5", "2"),
             ],
             ["tconst", "averageRating", "numVotes"],
         )
@@ -53,15 +56,18 @@ class ExplorationJoinsTests(unittest.TestCase):
             [("nm1", "Director One"), ("nm2", "Director Two")],
             ["nconst", "primaryName"],
         )
-        rows = directors_with_one_high_film(films, crew, ratings, names).collect()
+        rows = directors_with_one_high_film(
+            films, crew, ratings, names
+        ).collect()
 
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].nconst, "nm1")
         self.assertEqual(rows[0].high_movie_id, "tt1")
+        self.assertEqual(rows[0].high_movie_votes, 2000)
         self.assertEqual(rows[0].other_movie_count, 2)
         self.assertEqual(rows[0].other_average_rating, 5.5)
 
-    def test_series_requires_three_long_seasons_and_unambiguous_extremes(self) -> None:
+    def test_series_needs_long_seasons_and_clear_extremes(self) -> None:
         titles = []
         episodes = []
         ratings = []
@@ -74,13 +80,16 @@ class ExplorationJoinsTests(unittest.TestCase):
                     titles.append((episode_id, "tvEpisode", episode_id))
                     episodes.append((episode_id, series_id, str(season)))
                     rating = "7.0"
+                    votes = "100"
                     if season == 1 and number == 1:
                         rating = "9.0"
+                    if season == 1 and number == 2:
+                        rating, votes = "1.1", "2"
                     if season == 3 and number == 10:
                         rating = "2.0"
                     if series_id == "s2" and season == 3 and number == 2:
-                        rating = "9.0"  # A tied best in the last season excludes s2.
-                    ratings.append((episode_id, rating, "10"))
+                        rating = "9.0"  # A late best excludes s2.
+                    ratings.append((episode_id, rating, votes))
         title_df = self.spark.createDataFrame(
             titles, ["tconst", "titleType", "primaryTitle"]
         )
@@ -98,8 +107,10 @@ class ExplorationJoinsTests(unittest.TestCase):
         self.assertEqual([row.parentTconst for row in rows], ["s1"])
         self.assertEqual(rows[0].best_rating, 9.0)
         self.assertEqual(rows[0].worst_rating, 2.0)
+        self.assertEqual(rows[0].best_episode_votes, 100)
+        self.assertEqual(rows[0].worst_episode_votes, 100)
         self.assertEqual(rows[0].last_season, 3)
-        self.assertEqual(rows[0].rated_episode_count, 30)
+        self.assertEqual(rows[0].rated_episode_count, 29)
 
 
 if __name__ == "__main__":
