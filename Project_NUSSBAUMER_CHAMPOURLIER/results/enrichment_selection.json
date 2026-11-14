@@ -1,0 +1,524 @@
+{
+  "definitions": {
+    "years": [
+      1980,
+      2025
+    ],
+    "feature_minimum_minutes": 60,
+    "films_per_genre_year": 10,
+    "ranking": "IMDb_numVotes_desc_then_averageRating_desc_then_tconst",
+    "principals_per_distinct_film": 3,
+    "principal_ranking": "IMDb_ordering_asc_then_nconst"
+  },
+  "genre_year_groups": 1071,
+  "film_genre_year_rows": 10161,
+  "distinct_films": 7152,
+  "principal_rows": 21404,
+  "films_with_fewer_than_three_principals": 32,
+  "film_examples": [
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 1,
+      "tconst": "tt0081573",
+      "primaryTitle": "Superman II",
+      "runtime_minutes": 127,
+      "averageRating_clean": 6.8,
+      "numVotes_clean": 125350
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 2,
+      "tconst": "tt0080745",
+      "primaryTitle": "Flash Gordon",
+      "runtime_minutes": 111,
+      "averageRating_clean": 6.5,
+      "numVotes_clean": 67365
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 3,
+      "tconst": "tt0080736",
+      "primaryTitle": "The Final Countdown",
+      "runtime_minutes": 103,
+      "averageRating_clean": 6.7,
+      "numVotes_clean": 30628
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 4,
+      "tconst": "tt0080377",
+      "primaryTitle": "Any Which Way You Can",
+      "runtime_minutes": 116,
+      "averageRating_clean": 6.1,
+      "numVotes_clean": 22906
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 5,
+      "tconst": "tt0081529",
+      "primaryTitle": "Smokey and the Bandit II",
+      "runtime_minutes": 100,
+      "averageRating_clean": 5.3,
+      "numVotes_clean": 19449
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 6,
+      "tconst": "tt0080472",
+      "primaryTitle": "Bronco Billy",
+      "runtime_minutes": 116,
+      "averageRating_clean": 6.2,
+      "numVotes_clean": 14019
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 7,
+      "tconst": "tt0081506",
+      "primaryTitle": "Shogun Assassin",
+      "runtime_minutes": 85,
+      "averageRating_clean": 7.3,
+      "numVotes_clean": 12205
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 8,
+      "tconst": "tt0081568",
+      "primaryTitle": "The Stunt Man",
+      "runtime_minutes": 131,
+      "averageRating_clean": 6.9,
+      "numVotes_clean": 11910
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 9,
+      "tconst": "tt0080421",
+      "primaryTitle": "Battle Beyond the Stars",
+      "runtime_minutes": 102,
+      "averageRating_clean": 5.5,
+      "numVotes_clean": 11808
+    },
+    {
+      "year": 1980,
+      "genre": "Action",
+      "rank": 10,
+      "tconst": "tt0080641",
+      "primaryTitle": "The Dogs of War",
+      "runtime_minutes": 102,
+      "averageRating_clean": 6.3,
+      "numVotes_clean": 11212
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 1,
+      "tconst": "tt0081593",
+      "primaryTitle": "Taboo",
+      "runtime_minutes": 86,
+      "averageRating_clean": 6.9,
+      "numVotes_clean": 2192
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 2,
+      "tconst": "tt0079642",
+      "primaryTitle": "Erotic Nights of the Living Dead",
+      "runtime_minutes": 88,
+      "averageRating_clean": 4.2,
+      "numVotes_clean": 1674
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 3,
+      "tconst": "tt0080927",
+      "primaryTitle": "Insatiable",
+      "runtime_minutes": 77,
+      "averageRating_clean": 6.4,
+      "numVotes_clean": 718
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 4,
+      "tconst": "tt0157383",
+      "primaryTitle": "Beast in Space",
+      "runtime_minutes": 86,
+      "averageRating_clean": 4.0,
+      "numVotes_clean": 669
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 5,
+      "tconst": "tt0081727",
+      "primaryTitle": "Orgasmo nero",
+      "runtime_minutes": 90,
+      "averageRating_clean": 4.1,
+      "numVotes_clean": 542
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 6,
+      "tconst": "tt0171617",
+      "primaryTitle": "Les petites écolières",
+      "runtime_minutes": 83,
+      "averageRating_clean": 6.5,
+      "numVotes_clean": 436
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 7,
+      "tconst": "tt0081481",
+      "primaryTitle": "Summer in the Country",
+      "runtime_minutes": 82,
+      "averageRating_clean": 6.1,
+      "numVotes_clean": 391
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 8,
+      "tconst": "tt0080892",
+      "primaryTitle": "Hotel Paradise",
+      "runtime_minutes": 101,
+      "averageRating_clean": 4.4,
+      "numVotes_clean": 383
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 9,
+      "tconst": "tt0083055",
+      "primaryTitle": "Sexboat",
+      "runtime_minutes": 80,
+      "averageRating_clean": 6.3,
+      "numVotes_clean": 320
+    },
+    {
+      "year": 1980,
+      "genre": "Adult",
+      "rank": 10,
+      "tconst": "tt1177966",
+      "primaryTitle": "Equation to an Unknown",
+      "runtime_minutes": 99,
+      "averageRating_clean": 6.7,
+      "numVotes_clean": 302
+    }
+  ],
+  "principal_examples": [
+    {
+      "tconst": "tt0035423",
+      "principal_position": 1,
+      "nconst": "nm0000212",
+      "primaryName": "Meg Ryan",
+      "category": "actress"
+    },
+    {
+      "tconst": "tt0035423",
+      "principal_position": 2,
+      "nconst": "nm0413168",
+      "primaryName": "Hugh Jackman",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0035423",
+      "principal_position": 3,
+      "nconst": "nm0000630",
+      "primaryName": "Liev Schreiber",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0061876",
+      "principal_position": 1,
+      "nconst": "nm0603314",
+      "primaryName": "Nonna Mordyukova",
+      "category": "actress"
+    },
+    {
+      "tconst": "tt0061876",
+      "principal_position": 2,
+      "nconst": "nm0125909",
+      "primaryName": "Rolan Bykov",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0061876",
+      "principal_position": 3,
+      "nconst": "nm0623970",
+      "primaryName": "Raisa Nedashkovskaya",
+      "category": "actress"
+    },
+    {
+      "tconst": "tt0067625",
+      "principal_position": 1,
+      "nconst": "nm0125909",
+      "primaryName": "Rolan Bykov",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0067625",
+      "principal_position": 2,
+      "nconst": "nm0813463",
+      "primaryName": "Anatoliy Solonitsyn",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0067625",
+      "principal_position": 3,
+      "nconst": "nm0952519",
+      "primaryName": "Vladimir Zamanskiy",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0075788",
+      "principal_position": 1,
+      "nconst": "nm0629838",
+      "primaryName": "James B. Nicholson",
+      "category": "self"
+    },
+    {
+      "tconst": "tt0075788",
+      "principal_position": 2,
+      "nconst": "nm0389888",
+      "primaryName": "Hoi-Chuen Lee",
+      "category": "archive_footage"
+    },
+    {
+      "tconst": "tt0075788",
+      "principal_position": 3,
+      "nconst": "nm0000045",
+      "primaryName": "Bruce Lee",
+      "category": "archive_footage"
+    },
+    {
+      "tconst": "tt0076917",
+      "principal_position": 1,
+      "nconst": "nm0488814",
+      "primaryName": "Keith Larsen",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0076917",
+      "principal_position": 2,
+      "nconst": "nm3170536",
+      "primaryName": "Reyn Parke",
+      "category": "producer"
+    },
+    {
+      "tconst": "tt0076917",
+      "principal_position": 3,
+      "nconst": "nm0519771",
+      "primaryName": "William Loose",
+      "category": "composer"
+    },
+    {
+      "tconst": "tt0078349",
+      "principal_position": 1,
+      "nconst": "nm0847580",
+      "primaryName": "Keiko Takeshita",
+      "category": "actress"
+    },
+    {
+      "tconst": "tt0078349",
+      "principal_position": 2,
+      "nconst": "nm0793336",
+      "primaryName": "Tarô Shigaki",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0078349",
+      "principal_position": 3,
+      "nconst": "nm0463514",
+      "primaryName": "Asao Koike",
+      "category": "actor"
+    },
+    {
+      "tconst": "tt0078780",
+      "principal_position": 1,
+      "nconst": "nm0705717",
+      "primaryName": "Gilda Radner",
+      "category": "actress"
+    },
+    {
+      "tconst": "tt0078780",
+      "principal_position": 2,
+      "nconst": "nm0000345",
+      "primaryName": "Billy Crystal",
+      "category": "actor"
+    }
+  ],
+  "principal_shortfalls": [
+    {
+      "tconst": "tt0093040",
+      "primaryTitle": "Forest of Bliss",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt0132119",
+      "primaryTitle": "L'ereditiera",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt0160161",
+      "primaryTitle": "Cum for Me",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt0240506",
+      "primaryTitle": "The First Pinup Girl of China",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt0361838",
+      "primaryTitle": "The Lifestyle: Swinging in America",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt10058864",
+      "primaryTitle": "The Third Strike",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt10087490",
+      "primaryTitle": "The Influence of Sex on Dieting",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt10102174",
+      "primaryTitle": "Younger Sister-in-law",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt10510774",
+      "primaryTitle": "Dejligt - the golden age of Danish Pornography 1970 - 1974",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt10948038",
+      "primaryTitle": "Champions League - Semi-Final Real Madrid vs Barcelona",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt10954574",
+      "primaryTitle": "Margaret Atwood: Live in Cinemas",
+      "principal_count": 0
+    },
+    {
+      "tconst": "tt11934970",
+      "primaryTitle": "Manchester United vs Manchester City",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt12625176",
+      "primaryTitle": "Bosomy Mom",
+      "principal_count": 0
+    },
+    {
+      "tconst": "tt13440194",
+      "primaryTitle": "Instant Orgasms! Her Body Learns to Convulse in Ecstasy. Karen Kaede. I Never Knew What a Real Orgasm Felt Like Until Now...",
+      "principal_count": 0
+    },
+    {
+      "tconst": "tt13469602",
+      "primaryTitle": "Zach Attacks: Costa Rica Especial",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt1650031",
+      "primaryTitle": "You Don't Like the Truth: 4 Days Inside Guantanamo",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt16653958",
+      "primaryTitle": "A Haunting at the Monte Vista",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt1667079",
+      "primaryTitle": "Food Stamped",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt1709101",
+      "primaryTitle": "Cowboys in Paradise",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt1740117",
+      "primaryTitle": "Toryboy the Movie",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt1852112",
+      "primaryTitle": "Svet Koji Nestaje",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt18687124",
+      "primaryTitle": "BTS Permission to Dance on Stage - Seoul: Live Viewing",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt31797835",
+      "primaryTitle": "The Ghost Pop~Tape",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt3665486",
+      "primaryTitle": "Los Scandalous - Skid Row",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt37645671",
+      "primaryTitle": "Room Service",
+      "principal_count": 0
+    },
+    {
+      "tconst": "tt37718257",
+      "primaryTitle": "Late Bloomer",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt39109253",
+      "primaryTitle": "Fetus Muncher 2",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt5275236",
+      "primaryTitle": "4K Fireplace",
+      "principal_count": 0
+    },
+    {
+      "tconst": "tt5848362",
+      "primaryTitle": "Evolution of Organic",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt6350750",
+      "primaryTitle": "The Pillars of Heaven",
+      "principal_count": 1
+    },
+    {
+      "tconst": "tt8089220",
+      "primaryTitle": "Selfi: Ben Hülya Avsar",
+      "principal_count": 2
+    },
+    {
+      "tconst": "tt9427536",
+      "primaryTitle": "We Stand Corrected: Dannemora",
+      "principal_count": 1
+    }
+  ]
+}

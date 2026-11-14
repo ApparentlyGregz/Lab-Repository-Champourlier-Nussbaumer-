@@ -94,3 +94,19 @@ Selon la [documentation IMDb](https://www.imdb.com/interfaces/), `title.akas.lan
 ## Usage d'outils d'IA
 
 OpenAI Codex a aidé à écrire le chargeur PySpark, les contrôles de qualité, les analyses Spark, leurs tests et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.
+
+## Sélection des films à enrichir
+
+Depuis la racine du dépôt, après le téléchargement des données IMDb :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/enrichment_selection.py
+```
+
+Le script classe les films d'au moins 60 minutes de 1980 à 2025 selon le nombre de votes IMDb, séparément pour chaque année et chaque genre. Il retient les dix premiers de chaque groupe, puis les trois premières personnes distinctes selon l'ordre des crédits IMDb de chaque film. Un film présent dans plusieurs genres n'a besoin que d'un synopsis et d'un ensemble de biographies. Les listes sont dans `results/enrichment_films.csv` et `results/enrichment_principals.csv` ; `results/enrichment_selection.json` donne les effectifs. Les films pour lesquels moins de trois personnes sont disponibles figurent dans `results/enrichment_principal_shortfalls.csv`. Cette sélection ne contient pas encore les synopsis ni les biographies provenant d'une source externe.
+
+### Usage de l'IA pour cette étape
+
+OpenAI Codex a également aidé à coder et tester cette sélection.
