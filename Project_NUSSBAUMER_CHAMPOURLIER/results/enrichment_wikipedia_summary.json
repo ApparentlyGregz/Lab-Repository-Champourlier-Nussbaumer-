@@ -1,0 +1,23 @@
+{
+  "source": "English Wikipedia via Wikidata IMDb ID P345",
+  "film_count": 7152,
+  "film_status": {
+    "no_wikidata_match": 461,
+    "plot_section_missing": 432,
+    "enriched": 5927,
+    "ambiguous_wikidata_match": 6,
+    "no_unique_english_article": 326
+  },
+  "films_with_synopsis": 5927,
+  "films_with_three_biographies": 5220,
+  "person_credit_count": 21404,
+  "person_status": {
+    "no_wikidata_match": 2057,
+    "enriched": 18071,
+    "biography_missing": 18,
+    "ambiguous_wikidata_match": 19,
+    "no_unique_english_article": 1239
+  },
+  "distinct_people_with_biography": 8008,
+  "films_with_fewer_than_three_imdb_principals": 32
+}

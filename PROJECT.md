@@ -134,6 +134,27 @@ Le script classe les films d'au moins 60 minutes de 1980 à 2025 selon le nombre
 
 OpenAI Codex a également aidé à coder et tester cette sélection.
 
+## Synopsis et biographies Wikipédia
+
+L'étape suivante relie les identifiants IMDb sélectionnés à Wikidata avec la propriété `P345` (identifiant IMDb), puis aux articles Wikipédia en anglais. Elle collecte la section « Plot » ou « Synopsis » des films et l'introduction des biographies. Le texte provient des contributeurs de Wikipédia ; aucun résumé n'est généré. Les extraits sont nettoyés (sélection de la section et normalisation des lignes vides) et redistribués sous [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Chaque ligne garde l'URL de l'article, l'URL de la révision lue, la page d'historique des contributeurs et la licence. Les identifiants sans source ou sans section utilisable reçoivent un statut explicite.
+
+Depuis la racine du dépôt, après l'exécution de `enrichment_selection.py` :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python src/wikipedia_collect.py --stage map
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python src/wikipedia_collect.py --stage films
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python src/wikipedia_collect.py --stage people
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/enrichment_wikipedia.py
+```
+
+Les requêtes sont séquentielles, espacées d'au moins 0,5 seconde et réessayées avec attente en cas de limitation ou d'erreur temporaire. Les fichiers bruts dans `data/external/` ne sont pas versionnés ; les relances reprennent aux identifiants non encore enregistrés. La collecte de tous les films peut durer plusieurs heures. `--max-items N` sert à un essai limité. L'usage doit respecter les [règles des API Wikimedia](https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_API_Usage_Guidelines/en).
+
+Le nettoyage du texte, l'application du schéma, les jointures et les calculs de couverture sont effectués dans Spark. Les données complètes sont écrites dans `output/enriched_films.parquet` et `output/enriched_principals.parquet`, et les versions CSV ainsi que le bilan dans `results/enriched_films.csv`, `results/enriched_principals.csv` et `results/enrichment_wikipedia_summary.json`. Un film présent dans plusieurs genres ne reçoit qu'un seul synopsis. Les 32 films ayant moins de trois crédits principaux dans IMDb restent signalés ; le traitement n'invente pas de personnes ou de biographies.
+
+OpenAI Codex a aidé à coder et tester la collecte et le traitement Spark. Les explications et interprétations dans `REPORT.md` sont rédigées par le groupe.
+
 ## Modifications Wikipédia en direct
 
 Ce traitement utilise le flux public [EventStreams `recentchange`](https://stream.wikimedia.org/v2/stream/recentchange), Kafka et PySpark Structured Streaming. Il conserve les modifications et créations d'articles de Wikipédia en anglais, puis recherche les pages dont le titre correspond à un film ou une série IMDb de 1980 à 2025 ayant au moins 100 votes. Les titres IMDb originaux et principaux sont pris en compte. Seules les pages Wikipédia avec un suffixe explicite comme `(film)`, `(2021 film)` ou `(television series)` sont retenues : les titres sans suffixe peuvent désigner un lieu, une personne ou un autre sujet. Le suffixe est retiré pour la comparaison, puis son année et son type d'œuvre sont vérifiés avec IMDb lorsqu'ils sont indiqués. Un même titre peut encore correspondre à plusieurs entrées IMDb ; chaque identifiant trouvé est conservé.
