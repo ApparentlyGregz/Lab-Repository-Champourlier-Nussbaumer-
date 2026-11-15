@@ -5,7 +5,8 @@ import unittest
 from pyspark.sql import SparkSession
 
 from src.exploration_languages import (
-    actor_language_evidence, multilingual_actors, successful_films,
+    actor_language_evidence, max_language_matching, multilingual_actors,
+    successful_films,
 )
 from src.wikidata_language_collect import map_batch
 
@@ -66,6 +67,81 @@ class LanguageExplorationTests(unittest.TestCase):
             evidence.where("nconst = 'nm1'").select(
                 "tconst"
             ).distinct().count(), 3,
+        )
+
+    def _actors(self, films, credits, variants=None):
+        candidates = self.spark.createDataFrame(
+            [(tconst, tconst, "2020", "7.5", "2000")
+             for tconst, _ in films],
+            ["tconst", "primaryTitle", "year",
+             "averageRating_clean", "numVotes_clean"],
+        )
+        languages = self.spark.createDataFrame(
+            [(tconst, "matched", f"https://www.wikidata.org/entity/{tconst}",
+              uris) for tconst, uris in films],
+            ["tconst", "status", "wikidata_uri",
+             "original_language_uris"],
+        )
+        principals = self.spark.createDataFrame(
+            [(tconst, nconst, "actor") for tconst, nconst in credits],
+            ["tconst", "nconst", "category"],
+        )
+        names = self.spark.createDataFrame(
+            [(nconst, nconst) for nconst in {n for _, n in credits}],
+            ["nconst", "primaryName"],
+        )
+        scored = successful_films(
+            candidates, languages, variants=variants
+        )
+        evidence = actor_language_evidence(scored, principals, names)
+        return {row.nconst: row for row in
+                multilingual_actors(evidence).collect()}, evidence
+
+    def test_each_language_needs_its_own_film(self):
+        actors, _ = self._actors(
+            [("tt1", ["en", "fr", "de"]), ("tt2", ["en"]),
+             ("tt3", ["de", "fr"]), ("tt4", ["de"])],
+            [("tt1", "nm1"), ("tt2", "nm1"),
+             ("tt3", "nm2"), ("tt4", "nm2")],
+        )
+        self.assertEqual(actors["nm1"].listed_language_count, 3)
+        self.assertEqual(actors["nm1"].language_count, 2)
+        self.assertFalse(actors["nm1"].at_least_three_languages)
+        self.assertEqual(
+            sorted(actors["nm1"].language_films), ["tt1", "tt2"]
+        )
+        self.assertEqual(actors["nm2"].language_count, 2)
+
+    def test_language_variants_are_merged(self):
+        variants = self.spark.createDataFrame(
+            [("en-us", "American English", "en", "English")],
+            ["variant_uri", "variant_name", "canonical_uri",
+             "canonical_name"],
+        )
+        actors, evidence = self._actors(
+            [("tt1", ["en-us"]), ("tt2", ["en"]),
+             ("tt3", ["en", "en-us"]), ("tt4", ["fr"])],
+            [("tt1", "nm1"), ("tt2", "nm1"),
+             ("tt3", "nm2"), ("tt4", "nm2")],
+            variants,
+        )
+        self.assertNotIn("nm1", actors)
+        self.assertEqual(actors["nm2"].language_count, 2)
+        merged = evidence.where("tconst = 'tt3'").collect()
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0].language_uri, "en")
+        self.assertEqual(merged[0].language_name, "English")
+        self.assertEqual(merged[0].source_language_uris, ["en", "en-us"])
+
+    def test_matching_finds_the_largest_assignment(self):
+        pairs = [
+            {"tconst": "tt1", "language_uri": "a", "language_name": "A"},
+            {"tconst": "tt1", "language_uri": "b", "language_name": "B"},
+            {"tconst": "tt2", "language_uri": "a", "language_name": "A"},
+        ]
+        self.assertEqual(
+            max_language_matching(pairs),
+            [("a", "A", "tt2"), ("b", "B", "tt1")],
         )
 
     def test_ambiguous_wikidata_ids_are_not_assigned_a_language(self):

@@ -171,8 +171,9 @@ def main() -> None:
         / "wikidata_language_labels.jsonl",
     )
     args = parser.parse_args()
-    if args.delay < 0.2 or (args.max_items is not None and
-                             args.max_items < 1):
+    if args.delay < 0.2 or (
+        args.max_items is not None and args.max_items < 1
+    ):
         parser.error("--delay must be >= 0.2 and --max-items >= 1")
     if args.stage == "labels":
         collect_labels(args.output, args.labels_output, args.delay)

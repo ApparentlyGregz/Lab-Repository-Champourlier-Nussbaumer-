@@ -1,0 +1,27 @@
+variant_uri,variant_name,canonical_uri,canonical_name
+http://www.wikidata.org/entity/Q7976,American English,http://www.wikidata.org/entity/Q1860,English
+http://www.wikidata.org/entity/Q7979,British English,http://www.wikidata.org/entity/Q1860,English
+http://www.wikidata.org/entity/Q1553250,Scottish English,http://www.wikidata.org/entity/Q1860,English
+http://www.wikidata.org/entity/Q44679,Australian English,http://www.wikidata.org/entity/Q1860,English
+http://www.wikidata.org/entity/Q1472196,Early Modern English,http://www.wikidata.org/entity/Q1860,English
+http://www.wikidata.org/entity/Q727694,Standard Chinese,http://www.wikidata.org/entity/Q9192,Mandarin
+http://www.wikidata.org/entity/Q262828,Standard Taiwanese Mandarin,http://www.wikidata.org/entity/Q9192,Mandarin
+http://www.wikidata.org/entity/Q24841726,Putonghua,http://www.wikidata.org/entity/Q9192,Mandarin
+http://www.wikidata.org/entity/Q107100968,Huáyǔ,http://www.wikidata.org/entity/Q9192,Mandarin
+http://www.wikidata.org/entity/Q7033959,Yue Chinese,http://www.wikidata.org/entity/Q9186,Cantonese
+http://www.wikidata.org/entity/Q5894342,Hong Kong Cantonese,http://www.wikidata.org/entity/Q9186,Cantonese
+http://www.wikidata.org/entity/Q9129,Greek,http://www.wikidata.org/entity/Q36510,Modern Greek
+http://www.wikidata.org/entity/Q750553,Brazilian Portuguese,http://www.wikidata.org/entity/Q5146,Portuguese
+http://www.wikidata.org/entity/Q616620,Mexican Spanish,http://www.wikidata.org/entity/Q1321,Spanish
+http://www.wikidata.org/entity/Q2631909,Castilian Spanish,http://www.wikidata.org/entity/Q1321,Spanish
+http://www.wikidata.org/entity/Q7573411,Spanish language in South America,http://www.wikidata.org/entity/Q1321,Spanish
+http://www.wikidata.org/entity/Q979914,Quebec French,http://www.wikidata.org/entity/Q150,French
+http://www.wikidata.org/entity/Q34147,Flemish Dutch,http://www.wikidata.org/entity/Q7411,Dutch
+http://www.wikidata.org/entity/Q1404296,Belgian Dutch,http://www.wikidata.org/entity/Q7411,Dutch
+http://www.wikidata.org/entity/Q306626,Austrian German,http://www.wikidata.org/entity/Q188,German
+http://www.wikidata.org/entity/Q3513637,Iranian Persian,http://www.wikidata.org/entity/Q9168,Persian
+http://www.wikidata.org/entity/Q178440,Dari,http://www.wikidata.org/entity/Q9168,Persian
+http://www.wikidata.org/entity/Q1654327,Classical Arabic,http://www.wikidata.org/entity/Q13955,Arabic
+http://www.wikidata.org/entity/Q33298,Filipino,http://www.wikidata.org/entity/Q34057,Tagalog
+http://www.wikidata.org/entity/Q36778,Taiwanese Hokkien,http://www.wikidata.org/entity/Q36495,Southern Min
+http://www.wikidata.org/entity/Q36806,Southern Quechua,http://www.wikidata.org/entity/Q5218,Quechua
