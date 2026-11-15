@@ -75,6 +75,37 @@ class OpenQuestionTests(unittest.TestCase):
         self.assertEqual(rows[0].last_two_min_votes, 1000)
         self.assertEqual(rows[0].rating_change, 2.0)
 
+    def test_equal_averages_give_exactly_zero_change(self) -> None:
+        # (7.3 + 7.1) / 2 and (7.2 + 7.2) / 2 differ by 8.9e-16 in floats.
+        titles = self.spark.createDataFrame(
+            [(f"tt{i}", "movie", f"Film {i}", str(2000 + i), "90")
+             for i in range(5)],
+            ["tconst", "titleType", "primaryTitle", "startYear",
+             "runtimeMinutes"],
+        )
+        crew = self.spark.createDataFrame(
+            [(f"tt{i}", "nm_director") for i in range(5)],
+            ["tconst", "directors"],
+        )
+        principals = self.spark.createDataFrame(
+            [(f"tt{i}", "nm_actor", "actor") for i in range(5)],
+            ["tconst", "nconst", "category"],
+        )
+        ratings = self.spark.createDataFrame(
+            [(f"tt{i}", rating, "1000")
+             for i, rating in enumerate(["7.3", "7.1", "5.0", "7.2", "7.2"])],
+            ["tconst", "averageRating", "numVotes"],
+        )
+        names = self.spark.createDataFrame(
+            [("nm_director", "Director"), ("nm_actor", "Actor")],
+            ["nconst", "primaryName"],
+        )
+        rows = repeated_collaborations(
+            titles, crew, principals, ratings, names
+        ).collect()
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].rating_change, 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()

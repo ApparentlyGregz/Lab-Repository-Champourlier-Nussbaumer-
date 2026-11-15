@@ -102,8 +102,14 @@ def repeated_collaborations(
             F.col("numVotes_clean"),
         )).alias("last_two_min_votes"),
     ).withColumn(
+        # IMDb ratings have one decimal, so two decimals are exact and
+        # remove floating-point noise such as 8.9e-16 for equal averages.
         "rating_change",
-        F.col("last_two_average_rating") - F.col("first_two_average_rating"),
+        F.round(
+            F.col("last_two_average_rating")
+            - F.col("first_two_average_rating"),
+            2,
+        ),
     )
     directors_names = names.select(
         F.col("nconst").alias("director_id"),
