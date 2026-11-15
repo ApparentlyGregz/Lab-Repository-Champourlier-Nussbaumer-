@@ -1,6 +1,7 @@
 Project_NUSSBAUMER_CHAMPOURLIER/data/
 Project_NUSSBAUMER_CHAMPOURLIER/output/
 Project_NUSSBAUMER_CHAMPOURLIER/checkpoints/
+Project_NUSSBAUMER_CHAMPOURLIER/results/streaming_batches/
 .venv/
 __pycache__/
 *.pyc
