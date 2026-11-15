@@ -2,7 +2,7 @@
 
 ## Participants
 
-- Grégoire CHAMPOURLIER (`ApparentlyGregz`) — gregoire.champourlier@edeu.ece.fr.
+- Grégoire CHAMPOURLIER (`ApparentlyGregz`) — gregoire.champourlier@edu.ece.fr.
 - Hippolyte NUSSBAUMER (`hippolyte-coder`) — hippolyte.nussbaumer@edu.ece.fr.
 
 ## Prérequis
