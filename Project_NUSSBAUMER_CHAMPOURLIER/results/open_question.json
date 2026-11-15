@@ -15,8 +15,8 @@
     "pair_count": 660,
     "mean_rating_change": -0.5909848484848486,
     "median_rating_change": -0.5,
-    "improved_pairs": 136,
-    "declined_pairs": 517
+    "improved_pairs": 134,
+    "declined_pairs": 516
   },
   "examples": [
     {
@@ -31,7 +31,7 @@
       "first_two_min_votes": 4453,
       "last_two_average_rating": 6.95,
       "last_two_min_votes": 3093,
-      "rating_change": -0.7000000000000002
+      "rating_change": -0.7
     },
     {
       "director_id": "nm0864775",
@@ -73,7 +73,7 @@
       "first_two_min_votes": 1442,
       "last_two_average_rating": 4.85,
       "last_two_min_votes": 1484,
-      "rating_change": -1.8000000000000007
+      "rating_change": -1.8
     },
     {
       "director_id": "nm0698184",
@@ -87,7 +87,7 @@
       "first_two_min_votes": 1221,
       "last_two_average_rating": 6.55,
       "last_two_min_votes": 5143,
-      "rating_change": -1.0499999999999998
+      "rating_change": -1.05
     },
     {
       "director_id": "nm0661345",
@@ -101,7 +101,7 @@
       "first_two_min_votes": 2091,
       "last_two_average_rating": 5.449999999999999,
       "last_two_min_votes": 1471,
-      "rating_change": -1.450000000000001
+      "rating_change": -1.45
     },
     {
       "director_id": "nm0698184",
@@ -115,7 +115,7 @@
       "first_two_min_votes": 1146,
       "last_two_average_rating": 5.15,
       "last_two_min_votes": 4622,
-      "rating_change": -1.9499999999999993
+      "rating_change": -1.95
     },
     {
       "director_id": "nm0700872",
@@ -129,7 +129,7 @@
       "first_two_min_votes": 1098,
       "last_two_average_rating": 2.75,
       "last_two_min_votes": 2425,
-      "rating_change": -4.449999999999999
+      "rating_change": -4.45
     },
     {
       "director_id": "nm2204103",
@@ -143,7 +143,7 @@
       "first_two_min_votes": 3832,
       "last_two_average_rating": 4.550000000000001,
       "last_two_min_votes": 1190,
-      "rating_change": -0.09999999999999964
+      "rating_change": -0.1
     },
     {
       "director_id": "nm0000095",
@@ -171,7 +171,7 @@
       "first_two_min_votes": 1293,
       "last_two_average_rating": 4.35,
       "last_two_min_votes": 1389,
-      "rating_change": -0.4500000000000002
+      "rating_change": -0.45
     },
     {
       "director_id": "nm0698184",
@@ -227,7 +227,7 @@
       "first_two_min_votes": 1314,
       "last_two_average_rating": 6.65,
       "last_two_min_votes": 3350,
-      "rating_change": -0.5999999999999996
+      "rating_change": -0.6
     },
     {
       "director_id": "nm1460159",
@@ -241,7 +241,7 @@
       "first_two_min_votes": 1855,
       "last_two_average_rating": 5.05,
       "last_two_min_votes": 76647,
-      "rating_change": -1.4000000000000004
+      "rating_change": -1.4
     },
     {
       "director_id": "nm2096009",
@@ -255,7 +255,7 @@
       "first_two_min_votes": 1080,
       "last_two_average_rating": 3.0999999999999996,
       "last_two_min_votes": 1000,
-      "rating_change": 0.19999999999999973
+      "rating_change": 0.2
     },
     {
       "director_id": "nm0005190",
@@ -269,7 +269,7 @@
       "first_two_min_votes": 6616,
       "last_two_average_rating": 5.85,
       "last_two_min_votes": 29581,
-      "rating_change": -0.20000000000000107
+      "rating_change": -0.2
     },
     {
       "director_id": "nm0122216",
@@ -283,7 +283,7 @@
       "first_two_min_votes": 9039,
       "last_two_average_rating": 3.6,
       "last_two_min_votes": 1106,
-      "rating_change": -3.7499999999999996
+      "rating_change": -3.75
     },
     {
       "director_id": "nm0122217",
@@ -297,7 +297,7 @@
       "first_two_min_votes": 9039,
       "last_two_average_rating": 3.6,
       "last_two_min_votes": 1106,
-      "rating_change": -3.7499999999999996
+      "rating_change": -3.75
     },
     {
       "director_id": "nm0158857",
@@ -311,7 +311,7 @@
       "first_two_min_votes": 5650,
       "last_two_average_rating": 6.75,
       "last_two_min_votes": 2233,
-      "rating_change": -0.6500000000000004
+      "rating_change": -0.65
     },
     {
       "director_id": "nm0223522",
@@ -339,7 +339,7 @@
       "first_two_min_votes": 26525,
       "last_two_average_rating": 6.1,
       "last_two_min_votes": 2939,
-      "rating_change": -0.15000000000000036
+      "rating_change": -0.15
     },
     {
       "director_id": "nm1167622",
@@ -353,7 +353,7 @@
       "first_two_min_votes": 1108,
       "last_two_average_rating": 7.1,
       "last_two_min_votes": 1036,
-      "rating_change": -0.4500000000000002
+      "rating_change": -0.45
     },
     {
       "director_id": "nm1167622",
@@ -367,7 +367,7 @@
       "first_two_min_votes": 1108,
       "last_two_average_rating": 7.1,
       "last_two_min_votes": 1036,
-      "rating_change": -0.4500000000000002
+      "rating_change": -0.45
     }
   ]
 }
