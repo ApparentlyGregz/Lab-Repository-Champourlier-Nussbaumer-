@@ -130,3 +130,19 @@ docker compose -p imdbstream -f streaming/compose.yaml down
 Le test dure 20 minutes après le chargement des titres IMDb. Le téléchargement initial du connecteur Kafka Spark requiert une connexion Internet. Chaque exécution reçoit un identifiant UTC : les correspondances complètes sont stockées dans `output/streaming/<identifiant>/matches/`, les métriques des lots dans `results/streaming_batches/<identifiant>/`, et le résumé ainsi que jusqu'à 100 exemples dans `results/streaming_summary.json` et `results/streaming_match_examples.csv`. Le résumé indique l'identifiant de l'exécution. Le producteur se reconnecte au flux avec le dernier identifiant d'événement confirmé par Kafka. Spark utilise l'heure de l'événement et une fenêtre de 30 minutes pour dédoublonner les identifiants ; les événements plus tardifs peuvent ne pas être retenus. Les membres du groupe doivent rédiger eux-mêmes la justification de ce choix et ses limites dans `REPORT.md`.
 
 OpenAI Codex a aussi aidé à écrire les scripts du flux Wikipédia/Kafka/Spark, leurs tests et cette procédure d'exécution.
+
+## Question libre : collaborations répétées
+
+Le script cherche les duos réalisateur–acteur ayant travaillé sur au moins cinq films de 60 minutes ou plus, sortis entre 1980 et 2025 et notés par au moins 1 000 personnes. Il compare la moyenne des notes IMDb de leurs deux premiers films communs à celle de leurs deux derniers films. Les collaborations sont ordonnées par année de sortie, puis par identifiant IMDb en cas d'égalité. Le CSV indique aussi le plus petit nombre de votes parmi les deux films de chaque période. La comparaison est descriptive : elle ne permet pas d'attribuer la différence au duo lui-même.
+
+Depuis la racine du dépôt, après le téléchargement des archives IMDb :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=128 --conf spark.sql.adaptive.coalescePartitions.enabled=false src/open_question.py
+```
+
+La liste complète est écrite dans `results/director_actor_collaborations.csv`, avec un résumé et des exemples dans `results/open_question.json`. L'option `--role-credits-parquet` permet de réutiliser un fichier de crédits par film déjà généré par `exploration_people.py` ; elle est facultative.
+
+OpenAI Codex a également aidé à coder et tester cette analyse. L'interprétation dans `REPORT.md` reste à écrire par le groupe.
