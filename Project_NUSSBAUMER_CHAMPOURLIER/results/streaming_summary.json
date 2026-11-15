@@ -1,0 +1,13 @@
+{
+  "run_id": "20261114T145223Z",
+  "source": "https://stream.wikimedia.org/v2/stream/recentchange",
+  "scope": "English Wikipedia article edits and creations",
+  "imdb_scope": "rated films and series, 1980-2025, at least 100 votes",
+  "processed_events": 2288,
+  "matched_event_entity_pairs": 21,
+  "batches": 20,
+  "first_event_time": "2026-11-14 14:53:20",
+  "last_event_time": "2026-11-14 15:21:57",
+  "distinct_events": 19,
+  "distinct_imdb_titles": 17
+}

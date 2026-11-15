@@ -110,3 +110,23 @@ Le script classe les films d'au moins 60 minutes de 1980 à 2025 selon le nombre
 ### Usage de l'IA pour cette étape
 
 OpenAI Codex a également aidé à coder et tester cette sélection.
+
+## Modifications Wikipédia en direct
+
+Ce traitement utilise le flux public [EventStreams `recentchange`](https://stream.wikimedia.org/v2/stream/recentchange), Kafka et PySpark Structured Streaming. Il conserve les modifications et créations d'articles de Wikipédia en anglais, puis recherche les pages dont le titre correspond à un film ou une série IMDb de 1980 à 2025 ayant au moins 100 votes. Les titres IMDb originaux et principaux sont pris en compte. Seules les pages Wikipédia avec un suffixe explicite comme `(film)`, `(2021 film)` ou `(television series)` sont retenues : les titres sans suffixe peuvent désigner un lieu, une personne ou un autre sujet. Le suffixe est retiré pour la comparaison, puis son année et son type d'œuvre sont vérifiés avec IMDb lorsqu'ils sont indiqués. Un même titre peut encore correspondre à plusieurs entrées IMDb ; chaque identifiant trouvé est conservé.
+
+Depuis `Project_NUSSBAUMER_CHAMPOURLIER` dans PowerShell, après le téléchargement des archives IMDb :
+
+```powershell
+docker compose -p imdbstream -f streaming/compose.yaml up -d broker
+docker compose -p imdbstream -f streaming/compose.yaml exec -T broker /opt/kafka/bin/kafka-topics.sh --bootstrap-server broker:19092 --create --if-not-exists --topic wikipedia-recentchange --partitions 1 --replication-factor 1
+docker compose -p imdbstream -f streaming/compose.yaml up -d --build producer
+$projectPath = (Resolve-Path .).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --network imdbstream_default --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.13:4.2.0 --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/wiki_stream.py --minutes 20
+docker compose -p imdbstream -f streaming/compose.yaml down
+```
+
+Le test dure 20 minutes après le chargement des titres IMDb. Le téléchargement initial du connecteur Kafka Spark requiert une connexion Internet. Chaque exécution reçoit un identifiant UTC : les correspondances complètes sont stockées dans `output/streaming/<identifiant>/matches/`, les métriques des lots dans `results/streaming_batches/<identifiant>/`, et le résumé ainsi que jusqu'à 100 exemples dans `results/streaming_summary.json` et `results/streaming_match_examples.csv`. Le résumé indique l'identifiant de l'exécution. Le producteur se reconnecte au flux avec le dernier identifiant d'événement confirmé par Kafka. Spark utilise l'heure de l'événement et une fenêtre de 30 minutes pour dédoublonner les identifiants ; les événements plus tardifs peuvent ne pas être retenus. Les membres du groupe doivent rédiger eux-mêmes la justification de ce choix et ses limites dans `REPORT.md`.
+
+OpenAI Codex a aussi aidé à écrire les scripts du flux Wikipédia/Kafka/Spark, leurs tests et cette procédure d'exécution.
