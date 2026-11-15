@@ -3,6 +3,8 @@
   "minimum_rating": 7.0,
   "minimum_votes": 1000,
   "language_source": "Wikidata P364 (original language of film)",
+  "counting_rule": "each language must be backed by a different successful film; listed Wikidata variants are merged",
+  "merged_language_variants": 26,
   "successful_film_candidates": 10401,
   "wikidata_mapping_status": {
     "no_wikidata_match": 387,
@@ -12,8 +14,38 @@
   },
   "successful_films_with_language": 9360,
   "successful_films_without_language": 1041,
-  "actor_film_language_rows": 93930,
+  "actor_film_language_rows": 93520,
   "actors_with_successful_films_with_language": 47273,
-  "actors_with_two_or_more_languages": 4763,
-  "actors_with_three_or_more_languages": 2113
+  "actors_with_two_or_more_languages": 4611,
+  "actors_with_three_or_more_languages": 1008,
+  "sensitivity": {
+    "with_variant_merge": {
+      "every_language_of_every_film": {
+        "two_or_more": 4611,
+        "three_or_more": 1977
+      },
+      "one_distinct_film_per_language": {
+        "two_or_more": 4611,
+        "three_or_more": 1008
+      },
+      "single_language_films_only": {
+        "two_or_more": 1713,
+        "three_or_more": 262
+      }
+    },
+    "without_variant_merge": {
+      "every_language_of_every_film": {
+        "two_or_more": 4763,
+        "three_or_more": 2113
+      },
+      "one_distinct_film_per_language": {
+        "two_or_more": 4763,
+        "three_or_more": 1094
+      },
+      "single_language_films_only": {
+        "two_or_more": 1861,
+        "three_or_more": 297
+      }
+    }
+  }
 }
