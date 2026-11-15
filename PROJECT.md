@@ -91,6 +91,27 @@ docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $i
 
 Selon la [documentation IMDb](https://www.imdb.com/interfaces/), `title.akas.language` décrit la langue d'un titre alternatif, pas celle parlée dans le film. La question sur les films de plusieurs langues nécessitera donc une source qui renseigne réellement la langue des films.
 
+## Films joués dans plusieurs langues originales
+
+La langue d'un titre alternatif IMDb ne décrit pas la langue du film. Pour cette question, nous utilisons la propriété `P364` de Wikidata, qui indique la langue originale du film. La correspondance avec IMDb se fait par l'identifiant `P345`. Une correspondance ambiguë est écartée. Les fichiers de résultats conservent l'URI Wikidata de chaque film et de chaque langue.
+
+Le périmètre est l'ensemble des longs métrages IMDb sortis entre 1980 et 2025, d'une durée d'au moins 60 minutes, notés au moins 7,0 avec au moins 1 000 votes. Un acteur ou une actrice est retenu après deux films distincts dans au moins deux valeurs `P364` différentes. Le résultat indique également les personnes présentes dans au moins trois langues. Un film déclaré multilingue par Wikidata contribue à chacune de ses langues, mais une personne doit toujours avoir au moins deux films distincts. Les variantes qu'identifie séparément Wikidata, par exemple l'anglais et l'anglais américain, restent distinctes dans ce calcul.
+
+Depuis la racine du dépôt, une fois les sept archives IMDb téléchargées :
+
+```powershell
+$projectPath = (Resolve-Path ./Project_NUSSBAUMER_CHAMPOURLIER).Path
+$image = "quay.io/jupyter/pyspark-notebook@sha256:7e102d041c42cca6e0d32269cded10fad2c377aeb09fad1ec546840660d691c4"
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/language_candidates.py
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python src/wikidata_language_collect.py
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image python src/wikidata_language_collect.py --stage labels
+docker run --rm --mount "type=bind,source=$projectPath,target=/work" -w /work $image spark-submit --driver-memory 4g --conf spark.sql.shuffle.partitions=32 src/exploration_languages.py
+```
+
+La liste des films candidats est créée dans `output/language_candidates.csv`. La collecte Wikidata suit les limites de l'API, attend au moins 0,5 seconde entre les requêtes et reprend les identifiants manquants en cas de relance. Les réponses brutes sont dans `data/external/wikidata_original_languages.jsonl` et les noms des langues dans `data/external/wikidata_language_labels.jsonl`. Spark applique les critères, les jointures et les calculs, puis écrit la liste des personnes dans `results/actors_multilingual.csv`, les films qui étayent chaque langue dans `results/actor_language_evidence.csv` et les effectifs dans `results/exploration_languages.json`. Les fichiers Parquet intermédiaires sont dans `output/`. Les films sans langue originale documentée ne sont pas classés dans une langue supposée.
+
+OpenAI Codex a aidé à coder et tester cette analyse. Les conclusions et le raisonnement du `REPORT.md` sont rédigés par les membres du groupe.
+
 ## Usage d'outils d'IA
 
 OpenAI Codex a aidé à écrire le chargeur PySpark, les contrôles de qualité, les analyses Spark, leurs tests et les instructions d'exécution de ce fichier. Les explications et raisonnements du `REPORT.md` sont rédigés par les membres du groupe.

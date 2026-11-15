@@ -1,0 +1,19 @@
+{
+  "scope": "all rated feature films, 1980-2025",
+  "minimum_rating": 7.0,
+  "minimum_votes": 1000,
+  "language_source": "Wikidata P364 (original language of film)",
+  "successful_film_candidates": 10401,
+  "wikidata_mapping_status": {
+    "no_wikidata_match": 387,
+    "no_original_language": 645,
+    "matched": 9360,
+    "ambiguous_wikidata_match": 9
+  },
+  "successful_films_with_language": 9360,
+  "successful_films_without_language": 1041,
+  "actor_film_language_rows": 93930,
+  "actors_with_successful_films_with_language": 47273,
+  "actors_with_two_or_more_languages": 4763,
+  "actors_with_three_or_more_languages": 2113
+}
