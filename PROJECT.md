@@ -2,8 +2,8 @@
 
 ## Participants
 
-- Grégoire CHAMPOURLIER (`ApparentlyGregz`) — adresse e-mail à compléter.
-- Hippolyte NUSSBAUMER (`hippolyte-coder`) — adresse e-mail à compléter.
+- Grégoire CHAMPOURLIER (`ApparentlyGregz`) — gregoire.champourlier@edeu.ece.fr.
+- Hippolyte NUSSBAUMER (`hippolyte-coder`) — hippolyte.nussbaumer@edu.ece.fr.
 
 ## Prérequis
 
